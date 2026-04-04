@@ -1,64 +1,225 @@
-<h1 align="center">Hi 👋, I'm Abhishek</h1>
-<h3 align="center">Aspiring Web Developer | AWS Learner ☁️</h3>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abhishek | Portfolio</title>
 
----
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
-## 🚀 About Me
-- 🎓 Pursuing **BCA (Bachelor of Computer Applications)**
-- 💻 Passionate about **Web Development**
-- ☁️ Learning **AWS Cloud (EC2, Hosting)**
-- 🔥 Building real-world projects to improve my skills
-- 🎯 Goal: Become a **Full Stack Developer**
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
 
----
+body {
+    background: #0f172a;
+    color: #e2e8f0;
+}
 
-## 💼 Internship Experience
-- 🏢 **Research Analyst Intern – Concentrix**  
-  → Worked on data analysis and research-based tasks  
-  → Improved problem-solving and analytical skills  
-  → Gained experience in professional work environment  
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+    background: rgba(2,6,23,0.9);
+    position: sticky;
+    top: 0;
+}
 
----
+nav h1 {
+    color: #38bdf8;
+}
 
-## 🛠️ Skills
-- 🌐 HTML, CSS, JavaScript  
-- ☁️ AWS EC2  
-- 🐧 Linux Basics  
-- 🔧 Git & GitHub  
+nav ul {
+    display: flex;
+    list-style: none;
+}
 
----
+nav ul li {
+    margin-left: 25px;
+    cursor: pointer;
+}
 
-## 💡 Projects
-- 🔹 **Portfolio Website**  
-  → Hosted on AWS EC2 using Apache  
+nav ul li:hover {
+    color: #38bdf8;
+}
 
-- 🔹 **Army Theme Portfolio**  
-  → Creative UI inspired by Indian Army  
+section {
+    padding: 60px 10%;
+}
 
-- 🔹 **JavaScript Mini Apps**  
-  → Calculator, alerts, UI interactions  
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
----
+.hero h2 {
+    font-size: 45px;
+}
 
-## 📫 Contact Me
-- 📧 Email: your-email@gmail.com  
-- 🐙 GitHub: https://github.com/debug-with-abhi  
+.hero span {
+    color: #38bdf8;
+}
 
----
+.skills-container, .projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
 
-## 📊 GitHub Stats
-![Abhishek's GitHub stats](https://github-readme-stats.vercel.app/api?username=debug-with-abhi&show_icons=true&theme=tokyonight)
+.skill, .card {
+    background: #1e293b;
+    padding: 15px 20px;
+    border-radius: 10px;
+}
 
----
+.card {
+    width: 300px;
+    transition: 0.3s;
+}
 
-## 🔥 Streak Stats
-![GitHub Streak](https://streak-stats.demolab.com/?user=debug-with-abhi&theme=tokyonight)
+.card:hover {
+    transform: translateY(-10px);
+}
 
----
+.education-item {
+    margin-top: 20px;
+}
 
-## ⚡ Fun Fact
-> I love building websites and exploring cloud technologies 🚀
+/* CONTACT */
+.contact-box {
+    margin-top: 20px;
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 10px;
+}
 
----
+.contact-box p {
+    margin: 10px 0;
+}
 
-⭐️ From [debug-with-abhi](https://github.com/debug-with-abhi)
+.contact-box a {
+    color: #38bdf8;
+    text-decoration: none;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #020617;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <h1>Abhishek</h1>
+    <ul>
+        <li onclick="go('home')">Home</li>
+        <li onclick="go('about')">About</li>
+        <li onclick="go('skills')">Skills</li>
+        <li onclick="go('projects')">Projects</li>
+        <li onclick="go('education')">Education</li>
+        <li onclick="go('contact')">Contact</li>
+      <li onclick="go('Intrenship')">Intrenships</li>
+    </ul>
+</nav>
+
+<section id="home" class="hero">
+    <h2>Hi, I'm <span>Abhishek</span></h2>
+    <p>Aspiring Web Developer | AWS Learner</p>
+</section>
+
+<section id="about">
+    <h2>About Me</h2>
+    <p>
+        I am a passionate web developer in progress, currently pursuing BCA.
+        I enjoy creating modern websites and learning cloud technologies like AWS.
+        I love solving problems and building creative projects.
+    </p>
+</section>
+
+<section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-container">
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">AWS EC2</div>
+        <div class="skill">GitHub</div>
+        <div class="skill">Linux</div>
+    </div>
+</section>
+
+<section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-container">
+
+        <div class="card">
+            <h3>Portfolio Website</h3>
+            <p>Hosted personal website using AWS EC2 and Apache.</p>
+        </div>
+
+        <div class="card">
+            <h3>Army Theme Portfolio</h3>
+            <p>Creative UI design inspired by Indian Army theme.</p>
+        </div>
+
+        <div class="card">
+            <h3>JavaScript Apps</h3>
+            <p>Mini apps like calculator, alerts, and UI interactions.</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="education">
+    <h2>Education</h2>
+
+    <div class="education-item">
+        <h3>Bachelor of Computer Applications (BCA)</h3>
+        <p>Currently Pursuing</p>
+    </div>
+
+    <div class="education-item">
+        <h3>PUC / 12th</h3>
+        <p>Completed</p>
+    </div>
+
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+
+    <div class="contact-box">
+        <p>📧 Email: <b>your-email@gmail.com</b></p>
+        <p>🐙 GitHub: 
+            <a href="https://github.com/debug-with-abhi" target="_blank">
+                github.com/debug-with-abhi
+            </a>
+        </p>
+        <p>📍 Location: India</p>
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2026 Abhishek | All Rights Reserved</p>
+</footer>
+
+<script>
+function go(id){
+    document.getElementById(id).scrollIntoView({behavior:'smooth'});
+}
+</script>
+
+</body>
+</html>
