@@ -1,9 +1,204 @@
-<!doctype html>
-<html>
-  <head>
-    <title>Abhishek Portfolio</title>
-  </head>
-  <body>
-    <h1>Hi, I am Abhishek</h1>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+
+    <style>
+        /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #0f172a;
+            color: white;
+        }
+
+        /* NAVBAR */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 50px;
+            background: #020617;
+        }
+
+        nav h1 {
+            color: #38bdf8;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+            cursor: pointer;
+        }
+
+        nav ul li:hover {
+            color: #38bdf8;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 40px;
+        }
+
+        .hero span {
+            color: #38bdf8;
+        }
+
+        .hero button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            background: #38bdf8;
+            color: black;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        /* ABOUT */
+        .about {
+            padding: 50px;
+            text-align: center;
+        }
+
+        /* PROJECTS */
+        .projects {
+            padding: 50px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .card {
+            background: #1e293b;
+            padding: 20px;
+            border-radius: 10px;
+            width: 250px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        /* CONTACT */
+        .contact {
+            padding: 50px;
+            text-align: center;
+        }
+
+        input, textarea {
+            width: 300px;
+            padding: 10px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button.submit {
+            background: #22c55e;
+            color: white;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #020617;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <h1>MyPortfolio</h1>
+        <ul>
+            <li onclick="scrollToSection('home')">Home</li>
+            <li onclick="scrollToSection('about')">About</li>
+            <li onclick="scrollToSection('projects')">Projects</li>
+            <li onclick="scrollToSection('contact')">Contact</li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section id="home" class="hero">
+        <h2>Hello, I'm <span>Abhishek</span></h2>
+        <p>I am a Web Developer</p>
+        <button onclick="showAlert()">Hire Me</button>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <p>I am learning web development and building awesome websites using HTML, CSS, and JavaScript.</p>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="projects">
+        <div class="card">
+            <h3>Project 1</h3>
+            <p>My first website</p>
+        </div>
+
+        <div class="card">
+            <h3>Project 2</h3>
+            <p>Portfolio design</p>
+        </div>
+
+        <div class="card">
+            <h3>Project 3</h3>
+            <p>JavaScript app</p>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <input type="text" placeholder="Your Name"><br>
+        <input type="email" placeholder="Your Email"><br>
+        <textarea placeholder="Your Message"></textarea><br>
+        <button class="submit" onclick="submitForm()">Send</button>
+    </section>
+
+    <footer>
+        <p>© 2026 Abhishek | All Rights Reserved</p>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        function showAlert() {
+            alert("Thanks for your interest! 🚀");
+        }
+
+        function submitForm() {
+            alert("Message Sent Successfully!");
+        }
+
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+    </script>
+
+</body>
 </html>
