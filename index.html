@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Abhishek | Premium Portfolio</title>
+<title>Abhishek | Ultra Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
 
 <style>
 *{
@@ -21,16 +21,22 @@ body{
     overflow-x:hidden;
 }
 
-/* NAVBAR */
+/* PARTICLE BACKGROUND */
+canvas{
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:-1;
+}
+
+/* NAV */
 nav{
     display:flex;
     justify-content:space-between;
     padding:20px 10%;
     position:fixed;
     width:100%;
-    background:rgba(0,0,0,0.2);
     backdrop-filter:blur(10px);
-    z-index:1000;
 }
 
 nav h1{
@@ -44,7 +50,7 @@ nav ul{
 }
 
 nav a{
-    color:#fff;
+    color:white;
     text-decoration:none;
 }
 
@@ -52,61 +58,39 @@ nav a{
 .hero{
     height:100vh;
     display:flex;
+    flex-direction:column;
     justify-content:center;
     align-items:center;
-    flex-direction:column;
     text-align:center;
-    position:relative;
 }
 
-.hero h2{
-    font-size:3.5rem;
-    animation:fadeInUp 1s ease forwards;
-}
-
-.hero span{
-    color:#38bdf8;
+.hero h1{
+    font-size:4rem;
+    background:linear-gradient(90deg,#38bdf8,#818cf8);
+    -webkit-background-clip:text;
+    color:transparent;
 }
 
 .hero p{
     margin-top:10px;
     color:#94a3b8;
-    animation:fadeInUp 1.5s ease forwards;
 }
 
-/* glowing background */
-.hero::before{
-    content:'';
-    position:absolute;
-    width:400px;
-    height:400px;
-    background:radial-gradient(circle, #38bdf8, transparent);
-    filter:blur(100px);
-    animation:float 6s infinite alternate;
-}
-
-/* BUTTON */
 .btn{
     margin-top:20px;
-    padding:12px 25px;
-    background:#38bdf8;
+    padding:12px 30px;
     border:none;
-    color:#000;
     border-radius:30px;
+    background:linear-gradient(90deg,#38bdf8,#818cf8);
     cursor:pointer;
-    transition:0.3s;
-    animation:fadeInUp 2s ease forwards;
+    color:#000;
 }
 
-.btn:hover{
-    transform:scale(1.1);
-}
-
-/* SECTIONS */
+/* SECTION */
 section{
-    padding:80px 10%;
+    padding:100px 10%;
     opacity:0;
-    transform:translateY(50px);
+    transform:translateY(80px);
     transition:1s;
 }
 
@@ -115,18 +99,18 @@ section.show{
     transform:translateY(0);
 }
 
-/* CARDS */
+/* GLASS CARD */
 .card{
     background:rgba(255,255,255,0.05);
-    backdrop-filter:blur(10px);
-    padding:20px;
-    border-radius:15px;
+    backdrop-filter:blur(15px);
+    padding:25px;
+    border-radius:20px;
     margin-top:20px;
     transition:0.3s;
 }
 
 .card:hover{
-    transform:translateY(-10px) scale(1.02);
+    transform:translateY(-10px) scale(1.03);
 }
 
 /* GRID */
@@ -143,27 +127,12 @@ footer{
     background:#000;
 }
 
-/* ANIMATIONS */
-@keyframes fadeInUp{
-    from{
-        opacity:0;
-        transform:translateY(30px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-@keyframes float{
-    from{ transform:translateY(-20px);}
-    to{ transform:translateY(20px);}
-}
-
 </style>
 </head>
 
 <body>
+
+<canvas id="bg"></canvas>
 
 <nav>
     <h1>Abhishek</h1>
@@ -177,18 +146,16 @@ footer{
 
 <!-- HERO -->
 <div class="hero">
-    <h2>Hi, I'm <span>Abhishek</span></h2>
-    <p>Building Modern Web & Cloud Solutions</p>
-    <button class="btn" onclick="scrollToSection('contact')">Let's Connect</button>
+    <h1>Abhishek</h1>
+    <p>Crafting Modern Web & Cloud Experiences</p>
+    <button class="btn" onclick="scrollToSection('contact')">Connect</button>
 </div>
 
 <!-- ABOUT -->
 <section id="about">
     <h2>About Me</h2>
     <div class="card">
-        <p>
-            Passionate developer focused on web development, AWS cloud, and building impactful projects.
-        </p>
+        Passionate developer focused on building modern, scalable web and cloud solutions.
     </div>
 </section>
 
@@ -209,20 +176,9 @@ footer{
 <section id="projects">
     <h2>Projects</h2>
     <div class="grid">
-        <div class="card">
-            <h3>Portfolio Website</h3>
-            <p>Modern responsive portfolio design.</p>
-        </div>
-
-        <div class="card">
-            <h3>AWS Deployment</h3>
-            <p>Hosted apps using EC2 & Apache.</p>
-        </div>
-
-        <div class="card">
-            <h3>Linux Server</h3>
-            <p>Configured production-ready server.</p>
-        </div>
+        <div class="card">Portfolio Website</div>
+        <div class="card">AWS Hosting</div>
+        <div class="card">Linux Server Setup</div>
     </div>
 </section>
 
@@ -230,32 +186,72 @@ footer{
 <section id="contact">
     <h2>Contact</h2>
     <div class="card">
-        <p>Email: your-email@example.com</p>
-        <p>GitHub: <a href="https://github.com/debug-with-abhi" target="_blank">debug-with-abhi</a></p>
+        Email: your-email@example.com <br>
+        GitHub: <a href="https://github.com/debug-with-abhi" target="_blank">debug-with-abhi</a>
     </div>
 </section>
 
 <footer>
-    <p>© 2026 Abhishek</p>
+    © 2026 Abhishek
 </footer>
 
 <script>
-// smooth scroll
-function scrollToSection(id){
-    document.getElementById(id).scrollIntoView({behavior:'smooth'});
+// PARTICLES
+const canvas = document.getElementById("bg");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particles = [];
+
+for(let i=0;i<100;i++){
+    particles.push({
+        x:Math.random()*canvas.width,
+        y:Math.random()*canvas.height,
+        r:Math.random()*2,
+        d:Math.random()*1
+    });
 }
 
-// reveal animation
+function draw(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    ctx.fillStyle="white";
+    particles.forEach(p=>{
+        ctx.beginPath();
+        ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+        ctx.fill();
+    });
+    update();
+}
+
+function update(){
+    particles.forEach(p=>{
+        p.y+=p.d;
+        if(p.y>canvas.height){
+            p.y=0;
+        }
+    });
+}
+
+setInterval(draw,30);
+
+// SCROLL ANIMATION
 const sections = document.querySelectorAll("section");
 
-window.addEventListener("scroll", () => {
-    sections.forEach(sec => {
+window.addEventListener("scroll",()=>{
+    sections.forEach(sec=>{
         const top = sec.getBoundingClientRect().top;
         if(top < window.innerHeight - 100){
             sec.classList.add("show");
         }
     });
 });
+
+// SCROLL BUTTON
+function scrollToSection(id){
+    document.getElementById(id).scrollIntoView({behavior:'smooth'});
+}
 </script>
 
 </body>
