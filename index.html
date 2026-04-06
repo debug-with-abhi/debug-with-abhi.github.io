@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Abhishek | Portfolio</title>
+<title>Abhishek | Premium Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -16,9 +16,9 @@
 }
 
 body{
-    background:#0f172a;
+    background:#020617;
     color:#fff;
-    scroll-behavior:smooth;
+    overflow-x:hidden;
 }
 
 /* NAVBAR */
@@ -26,9 +26,11 @@ nav{
     display:flex;
     justify-content:space-between;
     padding:20px 10%;
-    background:rgba(0,0,0,0.3);
-    position:sticky;
-    top:0;
+    position:fixed;
+    width:100%;
+    background:rgba(0,0,0,0.2);
+    backdrop-filter:blur(10px);
+    z-index:1000;
 }
 
 nav h1{
@@ -37,13 +39,13 @@ nav h1{
 
 nav ul{
     display:flex;
-    list-style:none;
     gap:20px;
+    list-style:none;
 }
 
 nav a{
-    text-decoration:none;
     color:#fff;
+    text-decoration:none;
 }
 
 /* HERO */
@@ -54,10 +56,12 @@ nav a{
     align-items:center;
     flex-direction:column;
     text-align:center;
+    position:relative;
 }
 
 .hero h2{
-    font-size:3rem;
+    font-size:3.5rem;
+    animation:fadeInUp 1s ease forwards;
 }
 
 .hero span{
@@ -66,75 +70,94 @@ nav a{
 
 .hero p{
     margin-top:10px;
-    color:#cbd5f5;
+    color:#94a3b8;
+    animation:fadeInUp 1.5s ease forwards;
 }
 
+/* glowing background */
+.hero::before{
+    content:'';
+    position:absolute;
+    width:400px;
+    height:400px;
+    background:radial-gradient(circle, #38bdf8, transparent);
+    filter:blur(100px);
+    animation:float 6s infinite alternate;
+}
+
+/* BUTTON */
 .btn{
     margin-top:20px;
-    padding:10px 20px;
-    border:none;
+    padding:12px 25px;
     background:#38bdf8;
+    border:none;
     color:#000;
+    border-radius:30px;
     cursor:pointer;
-    border-radius:5px;
+    transition:0.3s;
+    animation:fadeInUp 2s ease forwards;
 }
 
-/* SECTION */
+.btn:hover{
+    transform:scale(1.1);
+}
+
+/* SECTIONS */
 section{
-    padding:60px 10%;
+    padding:80px 10%;
+    opacity:0;
+    transform:translateY(50px);
+    transition:1s;
 }
 
-/* ABOUT */
-.about p{
-    margin-top:10px;
-    line-height:1.6;
+section.show{
+    opacity:1;
+    transform:translateY(0);
 }
 
-/* SKILLS */
-.skills-list{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-    margin-top:20px;
-}
-
-.skill{
-    padding:10px 15px;
-    background:#1e293b;
-    border-radius:5px;
-}
-
-/* PROJECTS */
-.projects{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-}
-
-.project{
-    background:#1e293b;
+/* CARDS */
+.card{
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(10px);
     padding:20px;
-    border-radius:10px;
+    border-radius:15px;
+    margin-top:20px;
     transition:0.3s;
 }
 
-.project:hover{
-    transform:scale(1.05);
+.card:hover{
+    transform:translateY(-10px) scale(1.02);
 }
 
-/* CONTACT */
-.contact a{
-    display:block;
-    margin-top:10px;
-    color:#38bdf8;
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
 }
 
 /* FOOTER */
 footer{
     text-align:center;
     padding:20px;
-    background:#020617;
-    margin-top:40px;
+    background:#000;
+}
+
+/* ANIMATIONS */
+@keyframes fadeInUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes float{
+    from{ transform:translateY(-20px);}
+    to{ transform:translateY(20px);}
 }
 
 </style>
@@ -148,7 +171,6 @@ footer{
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="#experience">Experience</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
 </nav>
@@ -156,80 +178,84 @@ footer{
 <!-- HERO -->
 <div class="hero">
     <h2>Hi, I'm <span>Abhishek</span></h2>
-    <p>Aspiring Developer | Cloud Enthusiast | Problem Solver</p>
-    <button class="btn" onclick="scrollToSection('contact')">Contact Me</button>
+    <p>Building Modern Web & Cloud Solutions</p>
+    <button class="btn" onclick="scrollToSection('contact')">Let's Connect</button>
 </div>
 
 <!-- ABOUT -->
-<section id="about" class="about">
+<section id="about">
     <h2>About Me</h2>
-    <p>
-        I am a passionate developer with strong interest in web development, cloud computing, 
-        and problem solving. I enjoy building real-world projects and continuously improving my skills.
-    </p>
+    <div class="card">
+        <p>
+            Passionate developer focused on web development, AWS cloud, and building impactful projects.
+        </p>
+    </div>
 </section>
 
 <!-- SKILLS -->
 <section id="skills">
     <h2>Skills</h2>
-    <div class="skills-list">
-        <div class="skill">HTML</div>
-        <div class="skill">CSS</div>
-        <div class="skill">JavaScript</div>
-        <div class="skill">Java</div>
-        <div class="skill">AWS</div>
-        <div class="skill">Linux</div>
-        <div class="skill">Git & GitHub</div>
+    <div class="grid">
+        <div class="card">HTML</div>
+        <div class="card">CSS</div>
+        <div class="card">JavaScript</div>
+        <div class="card">Java</div>
+        <div class="card">AWS</div>
+        <div class="card">Linux</div>
     </div>
 </section>
 
 <!-- PROJECTS -->
 <section id="projects">
     <h2>Projects</h2>
-    <div class="projects">
-
-        <div class="project">
+    <div class="grid">
+        <div class="card">
             <h3>Portfolio Website</h3>
-            <p>Personal portfolio to showcase my skills and projects.</p>
+            <p>Modern responsive portfolio design.</p>
         </div>
 
-        <div class="project">
-            <h3>AWS EC2 Hosting</h3>
-            <p>Deployed websites using AWS EC2 and Apache server.</p>
+        <div class="card">
+            <h3>AWS Deployment</h3>
+            <p>Hosted apps using EC2 & Apache.</p>
         </div>
 
-        <div class="project">
-            <h3>Linux Server Setup</h3>
-            <p>Configured and managed Linux servers.</p>
+        <div class="card">
+            <h3>Linux Server</h3>
+            <p>Configured production-ready server.</p>
         </div>
-
-    </div>
-</section>
-
-<!-- EXPERIENCE -->
-<section id="experience">
-    <h2>Experience</h2>
-    <div class="project">
-        <h3>Research Analyst - Concentrix</h3>
-        <p>Worked on analyzing data, generating insights, and supporting decision-making processes.</p>
     </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="contact">
+<section id="contact">
     <h2>Contact</h2>
-    <p>Email: your-email@example.com</p>
-    <a href="https://github.com/debug-with-abhi" target="_blank">GitHub: debug-with-abhi</a>
+    <div class="card">
+        <p>Email: your-email@example.com</p>
+        <p>GitHub: <a href="https://github.com/debug-with-abhi" target="_blank">debug-with-abhi</a></p>
+    </div>
 </section>
 
 <footer>
-    <p>© 2026 Abhishek | All Rights Reserved</p>
+    <p>© 2026 Abhishek</p>
 </footer>
 
 <script>
+// smooth scroll
 function scrollToSection(id){
     document.getElementById(id).scrollIntoView({behavior:'smooth'});
 }
+
+// reveal animation
+const sections = document.querySelectorAll("section");
+
+window.addEventListener("scroll", () => {
+    sections.forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if(top < window.innerHeight - 100){
+            sec.classList.add("show");
+        }
+    });
+});
 </script>
 
 </body>
