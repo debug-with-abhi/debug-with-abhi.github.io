@@ -3,36 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Abhishek | Creative Portfolio</title>
+<title>Abhishek | Advanced Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
-body{background:#0f172a;color:#fff;overflow-x:hidden}
+body{background:#020617;color:#fff;overflow-x:hidden}
 
 header{
   position:fixed;
   width:100%;
-  padding:20px 50px;
+  padding:15px 40px;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  background:rgba(0,0,0,0.3);
-  backdrop-filter:blur(10px);
+  background:rgba(0,0,0,0.4);
+  backdrop-filter:blur(12px);
   z-index:1000;
 }
 
-header h1{font-size:24px;color:#38bdf8}
-nav a{
-  margin-left:20px;
-  text-decoration:none;
-  color:#fff;
-  transition:0.3s;
-}
+header h1{color:#38bdf8}
+nav a{margin-left:20px;color:#fff;text-decoration:none;transition:.3s}
 nav a:hover{color:#38bdf8}
 
-section{min-height:100vh;padding:100px 50px}
+section{min-height:100vh;padding:100px 40px}
 
 .hero{
   display:flex;
@@ -42,15 +37,13 @@ section{min-height:100vh;padding:100px 50px}
   text-align:center;
 }
 
-.hero h2{
-  font-size:50px;
-  animation:fadeIn 2s ease-in-out;
-}
+.hero h2{font-size:48px}
 
-.hero p{
-  margin-top:20px;
-  font-size:18px;
-  opacity:0.8;
+.typing{
+  color:#38bdf8;
+  border-right:3px solid #38bdf8;
+  white-space:nowrap;
+  overflow:hidden;
 }
 
 .btn{
@@ -60,12 +53,6 @@ section{min-height:100vh;padding:100px 50px}
   border:none;
   border-radius:30px;
   cursor:pointer;
-  transition:0.3s;
-}
-
-.btn:hover{
-  transform:scale(1.1);
-  box-shadow:0 0 20px #38bdf8;
 }
 
 .cards{
@@ -75,101 +62,126 @@ section{min-height:100vh;padding:100px 50px}
 }
 
 .card{
-  background:#1e293b;
+  background:#0f172a;
   padding:20px;
-  border-radius:20px;
-  transition:0.4s;
+  border-radius:15px;
+  transition:.4s;
 }
 
 .card:hover{
-  transform:translateY(-10px) rotate(1deg);
-  box-shadow:0 10px 30px rgba(0,0,0,0.5);
+  transform:translateY(-10px) scale(1.05);
+  box-shadow:0 0 20px rgba(56,189,248,0.5);
 }
 
-footer{
-  text-align:center;
-  padding:20px;
-  background:#020617;
+.skills .bar{
+  margin:15px 0;
 }
 
-@keyframes fadeIn{
-  from{opacity:0;transform:translateY(20px)}
-  to{opacity:1;transform:translateY(0)}
+.bar span{
+  display:block;
+  height:8px;
+  background:#38bdf8;
+  border-radius:10px;
 }
 
-/* Floating animation */
-.floating{
-  position:absolute;
-  width:200px;
-  height:200px;
-  background:rgba(56,189,248,0.2);
-  border-radius:50%;
-  animation:float 6s infinite ease-in-out;
-}
+footer{text-align:center;padding:20px;background:#000}
 
-@keyframes float{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-30px)}
+canvas{
+  position:fixed;
+  top:0;left:0;
+  z-index:-1;
 }
-
 </style>
 </head>
 
 <body>
+
+<canvas id="particles"></canvas>
 
 <header>
   <h1>Abhishek</h1>
   <nav>
     <a href="#">Home</a>
     <a href="#about">About</a>
+    <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
   </nav>
 </header>
 
-<div class="floating" style="top:10%;left:5%"></div>
-<div class="floating" style="bottom:10%;right:5%"></div>
-
 <section class="hero">
   <h2>Hi, I'm Abhishek 👋</h2>
-  <p>Creative Developer | Cloud Enthusiast | Problem Solver</p>
-  <button class="btn">Explore My Work</button>
+  <h3 class="typing" id="typing"></h3>
+  <button class="btn">View Work</button>
 </section>
 
 <section id="about">
   <h2>About Me</h2>
-  <p>I am a passionate developer with skills in web development, cloud computing, and problem solving.</p>
+  <p>I am a developer passionate about Web Development, Cloud (AWS), and building real-world projects.</p>
+</section>
+
+<section id="skills" class="skills">
+  <h2>Skills</h2>
+  <div class="bar">HTML<span style="width:90%"></span></div>
+  <div class="bar">CSS<span style="width:85%"></span></div>
+  <div class="bar">JavaScript<span style="width:75%"></span></div>
+  <div class="bar">AWS<span style="width:70%"></span></div>
 </section>
 
 <section id="projects">
   <h2>Projects</h2>
   <div class="cards">
     <div class="card">Portfolio Website</div>
-    <div class="card">AWS Cloud Project</div>
-    <div class="card">Automation Script</div>
+    <div class="card">AWS EC2 Hosting</div>
+    <div class="card">Automation Scripts</div>
   </div>
 </section>
 
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Email: your@email.com</p>
-  <p>GitHub: github.com/debug-with-abhi</p>
-</section>
-
 <footer>
-  <p>© 2026 Abhishek | All Rights Reserved</p>
+  <p>GitHub: github.com/debug-with-abhi</p>
 </footer>
 
 <script>
 
-// Smooth scroll
-const links = document.querySelectorAll('nav a');
-links.forEach(link => {
-  link.addEventListener('click', e => {
-    e.preventDefault();
-    document.querySelector(link.getAttribute('href')).scrollIntoView({behavior:'smooth'});
+// Typing animation
+const text = ["Creative Developer","AWS Enthusiast","Problem Solver"];
+let i=0,j=0,current="",isDeleting=false;
+
+function type(){
+  current = text[i];
+  if(!isDeleting){
+    document.getElementById("typing").textContent = current.substring(0,j++);
+    if(j>current.length){isDeleting=true;setTimeout(type,1000);return;}
+  } else {
+    document.getElementById("typing").textContent = current.substring(0,j--);
+    if(j==0){isDeleting=false;i=(i+1)%text.length;}
+  }
+  setTimeout(type,isDeleting?50:100);
+}
+type();
+
+// Particle background
+const canvas = document.getElementById('particles');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particles = [];
+for(let i=0;i<80;i++){
+  particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:2,dx:Math.random()-0.5,dy:Math.random()-0.5});
+}
+
+function animate(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  particles.forEach(p=>{
+    ctx.beginPath();
+    ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.fillStyle='#38bdf8';
+    ctx.fill();
+    p.x+=p.dx; p.y+=p.dy;
   });
-});
+  requestAnimationFrame(animate);
+}
+animate();
 
 </script>
 
