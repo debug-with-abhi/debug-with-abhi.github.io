@@ -3,144 +3,116 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Abhishek | Pro Portfolio</title>
-
+<title>Abhishek P | Elite Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
-body{background:#020617;color:#fff;transition:.3s}
+body{background:#020617;color:#fff;overflow-x:hidden}
 
-.light{background:#f1f5f9;color:#000}
-
-header{
-  position:fixed;width:100%;padding:15px 40px;display:flex;justify-content:space-between;align-items:center;background:rgba(0,0,0,0.4);backdrop-filter:blur(12px);z-index:1000;
-}
-
+header{position:fixed;width:100%;padding:15px 40px;display:flex;justify-content:space-between;align-items:center;background:rgba(0,0,0,0.4);backdrop-filter:blur(12px);z-index:1000}
 nav a{margin-left:20px;color:#fff;text-decoration:none}
-
-.toggle{
-  cursor:pointer;
-  padding:5px 10px;
-  background:#38bdf8;
-  border-radius:10px;
-}
 
 section{min-height:100vh;padding:100px 40px}
 
 .hero{text-align:center}
-.hero h2{font-size:48px}
-
-.typing{color:#38bdf8;border-right:2px solid}
+.hero h1{font-size:50px;color:#38bdf8}
+.hero h3{margin-top:10px;color:#94a3b8}
 
 .btn{
-  margin-top:20px;padding:10px 20px;background:#38bdf8;border:none;border-radius:20px;cursor:pointer
+  margin-top:25px;
+  padding:12px 25px;
+  background:#38bdf8;
+  border:none;
+  border-radius:30px;
+  cursor:pointer;
+  text-decoration:none;
+  color:#000;
+  font-weight:bold;
 }
 
-.cards{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;
-}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.card{background:#0f172a;padding:20px;border-radius:15px;transition:.4s}
+.card:hover{transform:scale(1.05);box-shadow:0 0 25px rgba(56,189,248,0.5)}
 
-.card{
-  background:#0f172a;padding:20px;border-radius:15px;transition:.4s;transform-style:preserve-3d;
-}
+h2{margin-bottom:20px;color:#38bdf8}
 
-.card:hover{
-  transform:rotateY(10deg) rotateX(10deg) scale(1.05);
-}
-
-.skills .bar{margin:15px 0}
-.bar span{display:block;height:8px;background:#38bdf8;border-radius:10px}
-
-footer{text-align:center;padding:20px}
-
-canvas{position:fixed;top:0;left:0;z-index:-1}
+footer{text-align:center;padding:20px;background:#000}
 </style>
 </head>
 
 <body>
 
-<canvas id="bg"></canvas>
-
 <header>
-  <h2>Abhishek</h2>
+  <h2>Abhishek P</h2>
   <nav>
-    <a href="#">Home</a>
-    <a href="#skills">Skills</a>
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
     <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
   </nav>
-  <div class="toggle" onclick="toggleMode()">Mode</div>
 </header>
 
 <section class="hero">
-  <h2>Hi, I'm Abhishek</h2>
-  <h3 id="typing" class="typing"></h3>
-  <button class="btn">Download Resume</button>
+  <h1>Abhishek P</h1>
+  <h3>Creative Developer | Research Analyst | BCA Student</h3>
+  
+  <!-- DOWNLOAD BUTTON -->
+  <a href="Resume.pdf" download class="btn">⬇ Download Resume</a>
 </section>
 
-<section id="skills" class="skills">
-  <h2>Skills</h2>
-  <div class="bar">HTML<span style="width:90%"></span></div>
-  <div class="bar">CSS<span style="width:85%"></span></div>
-  <div class="bar">JavaScript<span style="width:75%"></span></div>
-  <div class="bar">AWS<span style="width:70%"></span></div>
+<section id="about">
+  <h2>About Me</h2>
+  <p>Motivated BCA student passionate about web development, cloud technologies, and data analysis. I enjoy building real-world projects and continuously learning new technologies.</p>
+</section>
+
+<section id="education">
+  <h2>Education</h2>
+  <div class="cards">
+    <div class="card">BCA (2024–2027)<br>MES College</div>
+  </div>
 </section>
 
 <section id="projects">
   <h2>Projects</h2>
   <div class="cards">
-    <div class="card">Portfolio Website</div>
-    <div class="card">AWS Hosting</div>
-    <div class="card">Automation Tool</div>
+    <div class="card">
+      <h3>E-Commerce Website</h3>
+      <p>Responsive website built using HTML & CSS with user-friendly UI.</p>
+    </div>
+    <div class="card">
+      <h3>Sales Dashboard</h3>
+      <p>Excel dashboard with charts & pivot tables for data insights.</p>
+    </div>
   </div>
 </section>
 
-<footer>
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="cards">
+    <div class="card">HTML, CSS, MongoDB, MySQL</div>
+    <div class="card">Excel Data Analysis</div>
+    <div class="card">IoT Basics</div>
+  </div>
+</section>
+
+<section id="experience">
+  <h2>Internship</h2>
+  <div class="card">
+    Research Analyst Intern – Concentrix<br>
+    Worked on NFL Sunday Games & YouTube TV project, analyzing data and contributing insights.
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email: abhicourse4@gmail.com</p>
   <p>GitHub: debug-with-abhi</p>
+</section>
+
+<footer>
+  <p>© 2026 Abhishek P</p>
 </footer>
-
-<script>
-
-// Dark mode toggle
-function toggleMode(){
-  document.body.classList.toggle('light');
-}
-
-// Typing effect
-const roles=["Developer","Cloud Engineer","Problem Solver"];
-let i=0,j=0,text='',del=false;
-function type(){
-  text=roles[i];
-  if(!del){
-    document.getElementById('typing').innerHTML=text.slice(0,j++);
-    if(j>text.length){del=true;setTimeout(type,1000);return}
-  }else{
-    document.getElementById('typing').innerHTML=text.slice(0,j--);
-    if(j==0){del=false;i=(i+1)%roles.length}
-  }
-  setTimeout(type,del?50:100);
-}
-type();
-
-// Particle bg
-const c=document.getElementById('bg');
-const ctx=c.getContext('2d');
-c.width=window.innerWidth;c.height=window.innerHeight;
-let p=[];
-for(let i=0;i<100;i++){
-  p.push({x:Math.random()*c.width,y:Math.random()*c.height,dx:Math.random()-0.5,dy:Math.random()-0.5});
-}
-function draw(){
-  ctx.clearRect(0,0,c.width,c.height);
-  p.forEach(e=>{
-    ctx.beginPath();ctx.arc(e.x,e.y,2,0,6.28);ctx.fillStyle='#38bdf8';ctx.fill();
-    e.x+=e.dx;e.y+=e.dy;
-  });
-  requestAnimationFrame(draw);
-}
-draw();
-
-</script>
 
 </body>
 </html>
