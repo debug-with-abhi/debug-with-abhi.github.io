@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Abhishek | Premium Portfolio</title>
+<title>Abhishek</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
@@ -87,6 +87,49 @@ h2{margin-bottom:20px;color:#00ffcc}
 }
 
 footer{text-align:center;padding:20px;background:rgba(0,0,0,0.5)}
+.intern-badge{
+  margin-top:20px;
+  padding:20px;
+  border-radius:20px;
+  background:rgba(0,255,204,0.1);
+  backdrop-filter:blur(10px);
+  text-align:center;
+  animation:floatBadge 3s ease-in-out infinite;
+  box-shadow:0 0 20px rgba(0,255,204,0.3);
+}
+
+.badge{
+  display:inline-block;
+  background:#00ffcc;
+  color:#000;
+  padding:5px 12px;
+  border-radius:20px;
+  font-size:12px;
+  margin-bottom:10px;
+  animation:glow 2s infinite alternate;
+}
+
+.role{font-weight:bold;color:#00ffcc}
+.company{font-size:14px}
+.project{font-size:12px;color:#ccc}
+
+@keyframes glow{
+  from{box-shadow:0 0 5px #00ffcc}
+  to{box-shadow:0 0 20px #00ffcc}
+}
+
+@keyframes floatBadge{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+}
+
+
+
+
+
+  to{opacity:1;transform:translateY(0)}
+}
+
 </style>
 </head>
 
@@ -105,27 +148,36 @@ footer{text-align:center;padding:20px;background:rgba(0,0,0,0.5)}
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
+    <a href="#Intrenship">Intrenship</a>
     <a href="#contact">Contact</a>
   </nav>
+
+  
 </header>
 
 <section class="hero">
   <h1>Abhishek P</h1>
   <h3 class="typing" id="typing"></h3>
+  
+  <!-- Internship Highlight -->
+  
+
   <a href="Resume.pdf" download class="btn">Download Resume</a>
 </section>
 
 <section id="about" class="parallax">
   <h2>About Me</h2>
-  <p>Motivated BCA student passionate about development, cloud, and real-world projects.</p>
+  <p>I am a passionate BCA student with a strong interest in web development, cloud computing, and data analysis. I enjoy building modern, user-friendly applications and continuously improving my technical skills.
+I have hands-on experience working on real-world projects and solving practical problems using technology.
+</p>
 </section>
 
 <section id="skills">
   <h2>Skills</h2>
   <div class="cards">
     <div class="card">HTML, CSS, JavaScript</div>
-    <div class="card">AWS & Cloud</div>
-    <div class="card">Data Analysis</div>
+    <div class="card">C</div>
+    <div class="card">MongoDb</div>
   </div>
 </section>
 
@@ -137,6 +189,66 @@ footer{text-align:center;padding:20px;background:rgba(0,0,0,0.5)}
     <div class="card">Portfolio</div>
   </div>
 </section>
+
+<section id="experience">
+  <h2>Internship Experience</h2>
+  
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Concentrix_logo.svg" alt="Concentrix" style="width:120px;margin-bottom:10px">
+        <h3>Research Analyst Intern</h3>
+        <p><b>Concentrix (Fortune 500)</b></p>
+        <ul>
+          <li>Worked on global tech client project (NFL Sunday Games & YouTube TV)</li>
+          <li>Conducted research and analyzed large datasets</li>
+          <li>Delivered data-driven insights and recommendations</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+.timeline{
+  position:relative;
+  margin-top:40px;
+  padding-left:40px;
+  border-left:2px solid #00ffcc;
+}
+
+.timeline-item{
+  position:relative;
+  margin-bottom:40px;
+}
+
+.timeline-dot{
+  position:absolute;
+  left:-10px;
+  top:10px;
+  width:15px;
+  height:15px;
+  background:#00ffcc;
+  border-radius:50%;
+  box-shadow:0 0 10px #00ffcc;
+}
+
+.timeline .card{
+  margin-left:20px;
+}
+
+.timeline ul{
+  margin-top:10px;
+  padding-left:20px;
+}
+
+.timeline li{
+  margin-bottom:5px;
+}
+</style>
 
 <section id="contact">
   <h2>Contact</h2>
