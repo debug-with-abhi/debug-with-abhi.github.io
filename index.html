@@ -3,128 +3,113 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Abhishek </title>
+<title>Abhishek | Creative Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:#0f172a;color:#fff;overflow-x:hidden}
+
+header{
+  position:fixed;
+  width:100%;
+  padding:20px 50px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(0,0,0,0.3);
+  backdrop-filter:blur(10px);
+  z-index:1000;
 }
 
-body{
-    background:#020617;
-    color:#fff;
-    overflow-x:hidden;
-}
-
-/* PARTICLE BACKGROUND */
-canvas{
-    position:fixed;
-    top:0;
-    left:0;
-    z-index:-1;
-}
-
-/* NAV */
-nav{
-    display:flex;
-    justify-content:space-between;
-    padding:20px 10%;
-    position:fixed;
-    width:100%;
-    backdrop-filter:blur(10px);
-}
-
-nav h1{
-    color:#38bdf8;
-}
-
-nav ul{
-    display:flex;
-    gap:20px;
-    list-style:none;
-}
-
+header h1{font-size:24px;color:#38bdf8}
 nav a{
-    color:white;
-    text-decoration:none;
+  margin-left:20px;
+  text-decoration:none;
+  color:#fff;
+  transition:0.3s;
 }
+nav a:hover{color:#38bdf8}
 
-/* HERO */
+section{min-height:100vh;padding:100px 50px}
+
 .hero{
-    height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
 }
 
-.hero h1{
-    font-size:4rem;
-    background:linear-gradient(90deg,#38bdf8,#818cf8);
-    -webkit-background-clip:text;
-    color:transparent;
+.hero h2{
+  font-size:50px;
+  animation:fadeIn 2s ease-in-out;
 }
 
 .hero p{
-    margin-top:10px;
-    color:#94a3b8;
+  margin-top:20px;
+  font-size:18px;
+  opacity:0.8;
 }
 
 .btn{
-    margin-top:20px;
-    padding:12px 30px;
-    border:none;
-    border-radius:30px;
-    background:linear-gradient(90deg,#38bdf8,#818cf8);
-    cursor:pointer;
-    color:#000;
+  margin-top:30px;
+  padding:12px 25px;
+  background:#38bdf8;
+  border:none;
+  border-radius:30px;
+  cursor:pointer;
+  transition:0.3s;
 }
 
-/* SECTION */
-section{
-    padding:100px 10%;
-    opacity:0;
-    transform:translateY(80px);
-    transition:1s;
+.btn:hover{
+  transform:scale(1.1);
+  box-shadow:0 0 20px #38bdf8;
 }
 
-section.show{
-    opacity:1;
-    transform:translateY(0);
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
 }
 
-/* GLASS CARD */
 .card{
-    background:rgba(255,255,255,0.05);
-    backdrop-filter:blur(15px);
-    padding:25px;
-    border-radius:20px;
-    margin-top:20px;
-    transition:0.3s;
+  background:#1e293b;
+  padding:20px;
+  border-radius:20px;
+  transition:0.4s;
 }
 
 .card:hover{
-    transform:translateY(-10px) scale(1.03);
+  transform:translateY(-10px) rotate(1deg);
+  box-shadow:0 10px 30px rgba(0,0,0,0.5);
 }
 
-/* GRID */
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-}
-
-/* FOOTER */
 footer{
-    text-align:center;
-    padding:20px;
-    background:#000;
+  text-align:center;
+  padding:20px;
+  background:#020617;
+}
+
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* Floating animation */
+.floating{
+  position:absolute;
+  width:200px;
+  height:200px;
+  background:rgba(56,189,248,0.2);
+  border-radius:50%;
+  animation:float 6s infinite ease-in-out;
+}
+
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-30px)}
 }
 
 </style>
@@ -132,126 +117,60 @@ footer{
 
 <body>
 
-<canvas id="bg"></canvas>
+<header>
+  <h1>Abhishek</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-<nav>
-    <h1>Abhishek</h1>
-    <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-</nav>
+<div class="floating" style="top:10%;left:5%"></div>
+<div class="floating" style="bottom:10%;right:5%"></div>
 
-<!-- HERO -->
-<div class="hero">
-    <h1>Abhishek</h1>
-    <p>Crafting Modern Web & Cloud Experiences</p>
-    <button class="btn" onclick="scrollToSection('contact')">Connect</button>
-</div>
+<section class="hero">
+  <h2>Hi, I'm Abhishek 👋</h2>
+  <p>Creative Developer | Cloud Enthusiast | Problem Solver</p>
+  <button class="btn">Explore My Work</button>
+</section>
 
-<!-- ABOUT -->
 <section id="about">
-    <h2>About Me</h2>
-    <div class="card">
-        Passionate developer focused on building modern, scalable web and cloud solutions.
-    </div>
+  <h2>About Me</h2>
+  <p>I am a passionate developer with skills in web development, cloud computing, and problem solving.</p>
 </section>
 
-<!-- SKILLS -->
-<section id="skills">
-    <h2>Skills</h2>
-    <div class="grid">
-        <div class="card">HTML</div>
-        <div class="card">CSS</div>
-        <div class="card">JavaScript</div>
-        <div class="card">Java</div>
-        <div class="card">AWS</div>
-        <div class="card">Linux</div>
-    </div>
-</section>
-
-<!-- PROJECTS -->
 <section id="projects">
-    <h2>Projects</h2>
-    <div class="grid">
-        <div class="card">Portfolio Website</div>
-        <div class="card">AWS Hosting</div>
-        <div class="card">Linux Server Setup</div>
-    </div>
+  <h2>Projects</h2>
+  <div class="cards">
+    <div class="card">Portfolio Website</div>
+    <div class="card">AWS Cloud Project</div>
+    <div class="card">Automation Script</div>
+  </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
-    <h2>Contact</h2>
-    <div class="card">
-        Email: your-email@example.com <br>
-        GitHub: <a href="https://github.com/debug-with-abhi" target="_blank">debug-with-abhi</a>
-    </div>
+  <h2>Contact</h2>
+  <p>Email: your@email.com</p>
+  <p>GitHub: github.com/debug-with-abhi</p>
 </section>
 
 <footer>
-    © 2026 Abhishek
+  <p>© 2026 Abhishek | All Rights Reserved</p>
 </footer>
 
 <script>
-// PARTICLES
-const canvas = document.getElementById("bg");
-const ctx = canvas.getContext("2d");
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-let particles = [];
-
-for(let i=0;i<100;i++){
-    particles.push({
-        x:Math.random()*canvas.width,
-        y:Math.random()*canvas.height,
-        r:Math.random()*2,
-        d:Math.random()*1
-    });
-}
-
-function draw(){
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    ctx.fillStyle="white";
-    particles.forEach(p=>{
-        ctx.beginPath();
-        ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-        ctx.fill();
-    });
-    update();
-}
-
-function update(){
-    particles.forEach(p=>{
-        p.y+=p.d;
-        if(p.y>canvas.height){
-            p.y=0;
-        }
-    });
-}
-
-setInterval(draw,30);
-
-// SCROLL ANIMATION
-const sections = document.querySelectorAll("section");
-
-window.addEventListener("scroll",()=>{
-    sections.forEach(sec=>{
-        const top = sec.getBoundingClientRect().top;
-        if(top < window.innerHeight - 100){
-            sec.classList.add("show");
-        }
-    });
+// Smooth scroll
+const links = document.querySelectorAll('nav a');
+links.forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    document.querySelector(link.getAttribute('href')).scrollIntoView({behavior:'smooth'});
+  });
 });
 
-// SCROLL BUTTON
-function scrollToSection(id){
-    document.getElementById(id).scrollIntoView({behavior:'smooth'});
-}
 </script>
 
 </body>
