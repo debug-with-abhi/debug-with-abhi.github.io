@@ -1,3 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Portfolio Projects</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        text-align: center;
+        padding: 50px;
+    }
+
+    h1 {
+        margin-bottom: 30px;
+    }
+
+    .projects {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .project-btn {
+        width: 70px;
+        height: 70px;
+        border: none;
+        border-radius: 50%;
+        background: #007bff;
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .project-btn:hover {
+        background: #0056b3;
+        transform: scale(1.1);
+    }
+
+    #codeContainer {
+        display: none;
+        margin-top: 40px;
+        background: #1e1e1e;
+        color: #00ff88;
+        padding: 20px;
+        border-radius: 10px;
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+        overflow-x: auto;
+    }
+
+    pre {
+        white-space: pre-wrap;
+    }
+</style>
+</head>
+<body>
+
+<h1>My Portfolio Projects</h1>
+
+<div class="projects">
+    <button class="project-btn" onclick="showCode(1)">1</button>
+    <button class="project-btn" onclick="showCode(2)">2</button>
+    <button class="project-btn" onclick="showCode(3)">3</button>
+    <button class="project-btn" onclick="showCode(4)">4</button>
+    <button class="project-btn" onclick="showCode(5)">5</button>
+    <button class="project-btn" onclick="showCode(6)">6</button>
+    <button class="project-btn" onclick="showCode(7)">7</button>
+    <button class="project-btn" onclick="showCode(8)">8</button>
+    <button class="project-btn" onclick="showCode(9)">9</button>
+</div>
+
+<div id="codeContainer">
+    <h2 id="projectTitle"></h2>
+    <pre id="projectCode"></pre>
+</div>
+
+<script>
+
 const projects = {
 
 1: `<!DOCTYPE html>
@@ -10,16 +96,9 @@ Your Programming Love Project Code Here
 </body>
 </html>`,
 
-2: `git init
-# start git in your folder
+2: `Project 2 Code Goes Here`,
 
-git remote add origin https://github.com/username/calculator-project.git`,
-
-3: `git add .
-
-git commit -m "Updated feature"
-
-git push`,
+3: `Project 3 Code Goes Here`,
 
 4: `Project 4 Code Goes Here`,
 
@@ -34,3 +113,19 @@ git push`,
 9: `Project 9 Code Goes Here`
 
 };
+
+function showCode(projectNumber) {
+
+    document.getElementById("codeContainer").style.display = "block";
+
+    document.getElementById("projectTitle").innerText =
+        "Project " + projectNumber;
+
+    document.getElementById("projectCode").innerText =
+        projects[projectNumber];
+}
+
+</script>
+
+</body>
+</html>
