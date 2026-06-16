@@ -1,281 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Abhishek </title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-    scroll-behavior:smooth;
-}
-
-body{
-    background:#0a0a0a;
-    color:#fff;
-    overflow-x:hidden;
-}
-
-/* 🌌 Particle Canvas */
-#particles{
-    position:fixed;
-    width:100%;
-    height:100%;
-    z-index:-1;
-}
-
-/* Navbar */
-nav{
-    display:flex;
-    justify-content:space-between;
-    padding:20px 50px;
-    position:fixed;
-    width:100%;
-    backdrop-filter:blur(10px);
-}
-
-nav h1{
-    color:#00f7ff;
-}
-
-nav ul{
-    display:flex;
-    gap:25px;
-    list-style:none;
-}
-
-nav ul li{
-    cursor:pointer;
-    transition:0.3s;
-}
-
-nav ul li:hover{
-    color:#red;
-}
-
-/* Hero */
-.hero{
-    height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-}
-
-.hero h2{
-    font-size:3rem;
-}
-
-.typing{
-    color:#00f7ff;
-    border-right:2px solid #00f7ff;
-    padding-right:5px;
-}
-
-/* Glitter Icons */
-.icons{
-    margin-top:30px;
-    display:flex;
-    gap:40px;
-}
-
-.icon{
-    font-size:35px;
-    padding:15px;
-    border-radius:50%;
-    background:rgba(255,255,255,0.05);
-    animation:glow 1.5s infinite alternate;
-}
-
-@keyframes glow{
-    0%{box-shadow:0 0 5px #00f7ff;}
-    100%{box-shadow:0 0 30px #00f7ff,0 0 60px #00f7ff;}
-}
-
-/* Sections */
-section{
-    padding:100px 10%;
-    text-align:center;
-}
-
-/* Cards */
-.card{
-    margin-top:20px;
-    padding:25px;
-    border-radius:15px;
-    background:rgba(255,255,255,0.05);
-    backdrop-filter:blur(15px);
-    transition:0.4s;
-}
-
-.card:hover{
-    transform:scale(1.05);
-    box-shadow:0 0 30px #00f7ff;
-}
-
-/* Project Grid */
-.projects{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-}
-
-/* Cursor Glow */
-.cursor{
-    position:fixed;
-    width:20px;
-    height:20px;
-    border-radius:50%;
-    background:#00f7ff;
-    pointer-events:none;
-    mix-blend-mode:difference;
-    transition:0.1s;
-}
-
-/* Footer */
-footer{
-    text-align:center;
-    padding:20px;
-    opacity:0.6;
-}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming Love</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: #fff;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            max-width: 800px;
+            margin: 20px;
+        }
+        .language-block {
+            margin: 20px 0;
+            text-align: left;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            white-space: pre-wrap;
+        }
+        .quote {
+            margin-top: 30px;
+            font-style: italic;
+            color: #ffd700;
+        }
+    </style>
 </head>
-
 <body>
+    <div class="container">
+	<h1>Welcome to My Web App</h1>
+  	<p>Deployed with GitOps using Argo CD, Helm, and Kubernetes!</p>    
+        <h1>Programming Love Across Languages</h1>
 
-<canvas id="particles"></canvas>
-<div class="cursor"></div>
+        <div class="language-block">
+            <strong>JavaScript:</strong>
+            <br>console.log("I LOVE YOU");
+        </div>
 
-<!-- Navbar -->
-<nav>
-    <h1>ABHISHEK</h1>
-    <ul>
-        <li onclick="scrollToSection('home')">Home</li>
-        <li onclick="scrollToSection('skills')">Skills</li>
-        <li onclick="scrollToSection('projects')">Projects</li>
-        <li onclick="scrollToSection('contact')">Contact</li>
-    </ul>
-</nav>
+        <div class="language-block">
+            <strong>Python:</strong>
+            <br>print("I LOVE YOU")
+        </div>
 
-<!-- Hero -->
-<section id="home" class="hero">
-    <h2>Hello, I'm Abhishek P</h2>
-    <h3 class="typing" id="typing"></h3>
+        <div class="language-block">
+            <strong>C++:</strong>
+            <br>#include &lt;iostream&gt;
+            <br>int main() {
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;std::cout &lt;&lt; "I LOVE YOU" &lt;&lt; std::endl;
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;return 0;
+            <br>}
+        </div>
 
-    <div class="icons">
-        <div class="icon">💻</div>
-        <div class="icon">⚡</div>
-        <div class="icon">🚀</div>
+        <div class="language-block">
+            <strong>Java:</strong>
+            <br>public class Main {
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;public static void main(String[] args) {
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("I LOVE YOU");
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;}
+            <br>}
+        </div>
+
+        <div class="language-block">
+            <strong>C#:</strong>
+            <br>using System;
+            <br>class Program {
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;static void Main() {
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine("I LOVE YOU");
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;}
+            <br>}
+        </div>
+
+        <div class="language-block">
+            <strong>Go:</strong>
+            <br>package main
+            <br>import "fmt"
+            <br>func main() {
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;fmt.Println("I LOVE YOU")
+            <br>}
+        </div>
+
+        <div class="language-block">
+            <strong>Ruby:</strong>
+            <br>puts "I LOVE YOU"
+        </div>
+
+        <div class="language-block">
+            <strong>PHP:</strong>
+            <br>&lt;?php
+            <br>echo "I LOVE YOU";
+            <br>?&gt;
+        </div>
+
+        <div class="language-block">
+            <strong>Swift:</strong>
+            <br>import Foundation
+            <br>print("I LOVE YOU")
+        </div>
+
+        <div class="language-block">
+            <strong>Kotlin:</strong>
+            <br>fun main() {
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;println("I LOVE YOU")
+            <br>}
+        </div>
+
+        <div class="language-block">
+            <strong>R:</strong>
+            <br>cat("I LOVE YOU\n")
+        </div>
+
+        <div class="language-block">
+            <strong>Rust:</strong>
+            <br>fn main() {
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;println!("I LOVE YOU");
+            <br>}
+        </div>
+
+        <div class="quote">
+            "Programming languages may differ in syntax, but the logic of love remains universal."
+        </div>
     </div>
-</section>
-
-<!-- Skills -->
-<section id="skills">
-    <h2>Skills</h2>
-    <div class="card">
-        HTML | CSS | JavaScript | AWS | Linux | GitHub
-    </div>
-</section>
-
-<!-- Projects -->
-<section id="projects">
-    <h2>Projects</h2>
-    <div class="projects">
-        <div class="card">🌐 Portfolio Website</div>
-        <div class="card">☁️ AWS Cloud Deployment</div>
-        <div class="card">⚙️ english speaking</div>
-    </div>
-</section>
-
-<!-- Contact -->
-<section id="contact">
-    <h2>Contact</h2>
-    <div class="card">
-        GitHub: debug-with-abhi.github.io <br>
-        Email: abhicourse4@gmail.com
-    </div>
-</section>
-
-<footer>
-    © 2026 Abhishek | Next-Level Portfolio 🚀
-</footer>
-
-<script>
-/* Typing Effect */
-const text = ["Web Developer", "Cloud Enthusiast", "Tech Explorer"];
-let i=0, j=0, current="", isDeleting=false;
-
-function type(){
-    current = text[i];
-    document.getElementById("typing").textContent = current.substring(0,j);
-
-    if(!isDeleting && j < current.length){
-        j++;
-        setTimeout(type,100);
-    }else if(isDeleting && j>0){
-        j--;
-        setTimeout(type,50);
-    }else{
-        isDeleting = !isDeleting;
-        if(!isDeleting) i=(i+1)%text.length;
-        setTimeout(type,1000);
-    }
-}
-type();
-
-/* Smooth Scroll */
-function scrollToSection(id){
-    document.getElementById(id).scrollIntoView({behavior:"smooth"});
-}
-
-/* Cursor Glow */
-const cursor = document.querySelector(".cursor");
-document.addEventListener("mousemove",(e)=>{
-    cursor.style.top = e.clientY + "px";
-    cursor.style.left = e.clientX + "px";
-});
-
-/* Particle Background */
-const canvas = document.getElementById("particles");
-const ctx = canvas.getContext("2d");
-
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-let particles = [];
-
-for(let i=0;i<100;i++){
-    particles.push({
-        x:Math.random()*canvas.width,
-        y:Math.random()*canvas.height,
-        r:Math.random()*2,
-        dx:Math.random()-0.5,
-        dy:Math.random()-0.5
-    });
-}
-
-function animate(){
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-
-    particles.forEach(p=>{
-        p.x+=p.dx;
-        p.y+=p.dy;
-        ctx.beginPath();
-        ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-        ctx.fillStyle="#00f7ff";
-        ctx.fill();
-    });
-
-    requestAnimationFrame(animate);
-}
-animate();
-</script>
-
 </body>
 </html>
