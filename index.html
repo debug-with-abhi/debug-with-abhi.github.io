@@ -1,37 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f4f4;
+}
+
+header{
+    background:#0077cc;
+    color:white;
+    padding:20px;
+    text-align:center;
+    font-size:32px;
+    font-weight:bold;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+    margin:30px;
+}
+
+button{
+    width:65px;
+    height:65px;
+    border:none;
+    border-radius:50%;
+    background:#0077cc;
+    color:white;
+    font-size:22px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#0056b3;
+    transform:scale(1.1);
+}
+
+#codeBox{
+    width:90%;
+    max-width:1100px;
+    margin:20px auto;
+    background:#1e1e1e;
+    color:#00ff88;
+    padding:20px;
+    border-radius:10px;
+    overflow:auto;
+    display:none;
+}
+
+pre{
+    white-space:pre-wrap;
+    font-size:15px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>Projects</header>
+
+<div class="buttons">
+
+<button onclick="showCode(1)">1</button>
+<button onclick="showCode(2)">2</button>
+<button onclick="showCode(3)">3</button>
+<button onclick="showCode(4)">4</button>
+<button onclick="showCode(5)">5</button>
+<button onclick="showCode(6)">6</button>
+<button onclick="showCode(7)">7</button>
+<button onclick="showCode(8)">8</button>
+<button onclick="showCode(9)">9</button>
+<button onclick="showCode(10)">10</button>
+<button onclick="showCode(11)">11</button>
+<button onclick="showCode(12)">12</button>
+
+</div>
+
+<div id="codeBox">
+<h2 id="title"></h2>
+<pre id="code"></pre>
+</div>
+
+<script>
+
 const projects = {
 
-1: `<!DOCTYPE html>
-<html>
+1:`<html>
+
 <head>
-<title>Programming Love</title>
+
 </head>
+
 <body>
-Your Programming Love Project Code Here
+
+<marquee behavior="scroll" direction="left">
+
+<img src="../Images/Nature.jpg" width="120" height="80" alt="Natural" />
+
+</marquee>
+
+<a href="http:\\www.google.com"> GOOGLE</a>
+
 </body>
+
 </html>`,
 
-2: `<!DOCTYPE html>
+2:`<!DOCTYPE html>
 <html>
 <head>
 <title>
 Registration form
 </title>
 </head>
-<body bgcolor="yellow">
-<h2>Creating a Registration Form:</h2>
+<body>
+<body bgcolor="yellow" >
+<H2> Creating a Registration form:
+</H2>
 <br>
-
 <form>
-
-<label>Firstname:</label>
-<input type="text" name="firstname" size="15">
-<br><br>
-
-<label>Lastname:</label>
-<input type="text" name="lastname" size="15">
-<br><br>
-
-<label>Course:</label>
+<label> Firstname: </label>
+<input type="text" name="firstname" size="15"> <br> <br>
+<label> Lastname: </label>
+<input type="text" name="lastname" size="15"> <br> <br>
+<label>
+Course:
+</label>
 <select>
 <option value="Course">Course</option>
 <option value="BCA">BCA</option>
@@ -40,44 +145,70 @@ Registration form
 <option value="B.Sc">B.Sc</option>
 <option value="B.A">B.A</option>
 </select>
-
-<br><br>
-
-<label>Gender:</label><br>
+<br>
+<br>
+<label>
+Gender:
+</label><br>
 <input type="radio" name="gender"> Male <br>
-<input type="radio" name="gender"> Female <br><br>
-
-<label>Hobbies:</label><br>
+<input type="radio" name="gender"> Female <br>
+<br>
+<label>
+Hobbies:
+</label>
+<br>
 <input type="checkbox" name="Programming"> Programming <br>
 <input type="checkbox" name="Sports"> Sports <br>
 <input type="checkbox" name="Singing"> Singing <br>
-<input type="checkbox" name="Reading"> Reading <br><br>
-
-<label>Address:</label><br>
-<textarea cols="80" rows="5"></textarea>
-
-<br><br>
-
+<input type="checkbox" name="Reading"> Reading <br>
+<br>
+<br>
+<label>
+Address:
+<br>
+<textarea cols="80" rows="5" value="address">
+</textarea>
+</label>
+<br> <br>
 <input type="submit" value="Submit">
 <input type="reset" value="Reset">
-
 </form>
-
 </body>
 </html>`,
 
-3: `Project 3 Code Goes Here`,
+3:`Code not added yet.`,
 
-4: `Project 4 Code Goes Here`,
+4:`Code not added yet.`,
 
-5: `Project 5 Code Goes Here`,
+5:`Code not added yet.`,
 
-6: `Project 6 Code Goes Here`,
+6:`Code not added yet.`,
 
-7: `Project 7 Code Goes Here`,
+7:`Code not added yet.`,
 
-8: `Project 8 Code Goes Here`,
+8:`Code not added yet.`,
 
-9: `Project 9 Code Goes Here`
+9:`Code not added yet.`,
+
+10:`Code not added yet.`,
+
+11:`Code not added yet.`,
+
+12:`Code not added yet.`
 
 };
+
+function showCode(number){
+
+document.getElementById("codeBox").style.display="block";
+
+document.getElementById("title").innerHTML="Project " + number;
+
+document.getElementById("code").textContent=projects[number];
+
+}
+
+</script>
+
+</body>
+</html>
