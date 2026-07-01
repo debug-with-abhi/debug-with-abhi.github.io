@@ -1,89 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Portfolio Projects</title>
-
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background: #f4f4f4;
-        text-align: center;
-        padding: 50px;
-    }
-
-    h1 {
-        margin-bottom: 30px;
-    }
-
-    .projects {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-    }
-
-    .project-btn {
-        width: 70px;
-        height: 70px;
-        border: none;
-        border-radius: 50%;
-        background: #007bff;
-        color: white;
-        font-size: 24px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: 0.3s;
-    }
-
-    .project-btn:hover {
-        background: #0056b3;
-        transform: scale(1.1);
-    }
-
-    #codeContainer {
-        display: none;
-        margin-top: 40px;
-        background: #1e1e1e;
-        color: #00ff88;
-        padding: 20px;
-        border-radius: 10px;
-        max-width: 1000px;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: left;
-        overflow-x: auto;
-    }
-
-    pre {
-        white-space: pre-wrap;
-    }
-</style>
-</head>
-<body>
-
-<h1>My Portfolio Projects</h1>
-
-<div class="projects">
-    <button class="project-btn" onclick="showCode(1)">1</button>
-    <button class="project-btn" onclick="showCode(2)">2</button>
-    <button class="project-btn" onclick="showCode(3)">3</button>
-    <button class="project-btn" onclick="showCode(4)">4</button>
-    <button class="project-btn" onclick="showCode(5)">5</button>
-    <button class="project-btn" onclick="showCode(6)">6</button>
-    <button class="project-btn" onclick="showCode(7)">7</button>
-    <button class="project-btn" onclick="showCode(8)">8</button>
-    <button class="project-btn" onclick="showCode(9)">9</button>
-</div>
-
-<div id="codeContainer">
-    <h2 id="projectTitle"></h2>
-    <pre id="projectCode"></pre>
-</div>
-
-<script>
-
 const projects = {
 
 1: `<!DOCTYPE html>
@@ -96,26 +10,28 @@ Your Programming Love Project Code Here
 </body>
 </html>`,
 
-2: <!DOCTYPE html>
+2: `<!DOCTYPE html>
 <html>
 <head>
 <title>
 Registration form
 </title>
 </head>
-<body>
-<body bgcolor="yellow" >
-<H2> Creating a Registration form:
-</H2>
+<body bgcolor="yellow">
+<h2>Creating a Registration Form:</h2>
 <br>
+
 <form>
-<label> Firstname: </label>
-<input type="text" name="firstname" size="15"> <br> <br>
-<label> Lastname: </label>
-<input type="text" name="lastname" size="15"> <br> <br>
-<label>
-Course:
-</label>
+
+<label>Firstname:</label>
+<input type="text" name="firstname" size="15">
+<br><br>
+
+<label>Lastname:</label>
+<input type="text" name="lastname" size="15">
+<br><br>
+
+<label>Course:</label>
 <select>
 <option value="Course">Course</option>
 <option value="BCA">BCA</option>
@@ -124,36 +40,31 @@ Course:
 <option value="B.Sc">B.Sc</option>
 <option value="B.A">B.A</option>
 </select>
-<br>
-<br>
-<label>
-Gender:
-</label><br>
+
+<br><br>
+
+<label>Gender:</label><br>
 <input type="radio" name="gender"> Male <br>
-<input type="radio" name="gender"> Female <br>
-<br>
-<label>
-Hobbies:
-</label>
-<br>
+<input type="radio" name="gender"> Female <br><br>
+
+<label>Hobbies:</label><br>
 <input type="checkbox" name="Programming"> Programming <br>
 <input type="checkbox" name="Sports"> Sports <br>
 <input type="checkbox" name="Singing"> Singing <br>
-<input type="checkbox" name="Reading"> Reading <br>
-<br>
-<br>
-<label>
-Address:
-<br>
-<textarea cols="80" rows="5" value="address">
-</textarea>
-</label>
-<br> <br>
+<input type="checkbox" name="Reading"> Reading <br><br>
+
+<label>Address:</label><br>
+<textarea cols="80" rows="5"></textarea>
+
+<br><br>
+
 <input type="submit" value="Submit">
 <input type="reset" value="Reset">
+
 </form>
+
 </body>
-</html> ,
+</html>`,
 
 3: `Project 3 Code Goes Here`,
 
@@ -170,19 +81,3 @@ Address:
 9: `Project 9 Code Goes Here`
 
 };
-
-function showCode(projectNumber) {
-
-    document.getElementById("codeContainer").style.display = "block";
-
-    document.getElementById("projectTitle").innerText =
-        "Project " + projectNumber;
-
-    document.getElementById("projectCode").innerText =
-        projects[projectNumber];
-}
-
-</script>
-
-</body>
-</html>
