@@ -1,100 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Projects</title>
-
-<style>
-
-body{
-    margin:0;
-    font-family:Arial,Helvetica,sans-serif;
-    background:#f4f4f4;
-}
-
-header{
-    background:#0077cc;
-    color:white;
-    padding:20px;
-    text-align:center;
-    font-size:32px;
-    font-weight:bold;
-}
-
-.buttons{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:15px;
-    margin:30px;
-}
-
-button{
-    width:65px;
-    height:65px;
-    border:none;
-    border-radius:50%;
-    background:#0077cc;
-    color:white;
-    font-size:22px;
-    cursor:pointer;
-    transition:.3s;
-}
-
-button:hover{
-    background:#0056b3;
-    transform:scale(1.1);
-}
-
-#codeBox{
-    width:90%;
-    max-width:1100px;
-    margin:20px auto;
-    background:#1e1e1e;
-    color:#00ff88;
-    padding:20px;
-    border-radius:10px;
-    overflow:auto;
-    display:none;
-}
-
-pre{
-    white-space:pre-wrap;
-    font-size:15px;
-}
-
-</style>
-</head>
-
-<body>
-
-<header>Projects</header>
-
-<div class="buttons">
-
-<button onclick="showCode(1)">1</button>
-<button onclick="showCode(2)">2</button>
-<button onclick="showCode(3)">3</button>
-<button onclick="showCode(4)">4</button>
-<button onclick="showCode(5)">5</button>
-<button onclick="showCode(6)">6</button>
-<button onclick="showCode(7)">7</button>
-<button onclick="showCode(8)">8</button>
-<button onclick="showCode(9)">9</button>
-<button onclick="showCode(10)">10</button>
-<button onclick="showCode(11)">11</button>
-<button onclick="showCode(12)">12</button>
-
-</div>
-
-<div id="codeBox">
-<h2 id="title"></h2>
-<pre id="code"></pre>
-</div>
-
-<script>
-
 const projects = {
 
 1:`<html>
@@ -180,7 +83,41 @@ Address:
 
 4:`Code not added yet.`,
 
-5:`Code not added yet.`,
+5:`<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Customer Feedback</title>
+
+</head>
+
+<body>
+
+<h1>Customer Feedback</h1>
+
+<button onclick="feedback()">Leave Feedback</button>
+
+<script>
+
+function feedback() {
+
+var name = prompt("Enter your Name:");
+
+if(name = null || name = "") {
+
+alert("Name is required");
+
+return;
+
+}
+
+</script>
+
+</body>
+
+</html>`,
 
 6:`Code not added yet.`,
 
@@ -190,25 +127,86 @@ Address:
 
 9:`Code not added yet.`,
 
-10:`Code not added yet.`,
+10:`<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title> MES college of Arts, Commerce and Science </title>
+
+<style>
+
+img {
+
+display: block;
+
+margin-left: auto;
+
+margin-right: auto;
+
+}
+
+</style>
+
+</head>
+
+<body bgcolor="pink" text="black">
+
+<h1><center>MES ACS COLLEGE</center></h1>
+
+<h2><center>15th Cross, Malleshwaram,
+Bengaluru 560003.
+</center></h2>
+
+<h2><center>Affiliated to Bengaluru City University</center></h2>
+
+<h3><center>NAAC Accredited-Grade-A</center></h3>
+
+<h3><center>mesinstitutions.org.in</center></h3>
+
+<img src="logo.png" style="width:10%;">
+
+<h1>COURSES OFFERED</h1>
+
+<ol>
+
+<h2><b>UG COURSES</b></h2>
+
+<ol>
+
+<b><li>B.Com</li></b>
+
+<b><li>B.Com (LSCM)</li></b>
+
+<b><li>BBA</li></b>
+
+<b><li>BBA (Aviation)</li></b>
+
+<b><li>BCA</li></b>
+
+<b><li>B.Sc</li></b>
+
+<b><li>BA</li></b>
+
+</ol>
+
+<h2><b>PG COURSES</b></h2>
+
+<ol>
+
+<b><li>M.Com</li></b>
+
+<b><li>M.Com (FA)</li></b>
+
+</ol>
+
+</body>
+
+</html>`,
 
 11:`Code not added yet.`,
 
 12:`Code not added yet.`
 
 };
-
-function showCode(number){
-
-document.getElementById("codeBox").style.display="block";
-
-document.getElementById("title").innerHTML="Project " + number;
-
-document.getElementById("code").textContent=projects[number];
-
-}
-
-</script>
-
-</body>
-</html>
