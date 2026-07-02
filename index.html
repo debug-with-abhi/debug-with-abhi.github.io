@@ -139,7 +139,31 @@ dfs('A', visited)`,
 
 3:`Code not added yet.`,
 
-4:`Code not added yet.`,
+4:`def hill_climbing(data):
+current index = 0
+while True:
+current_value = data[current_index]
+# Get neighbors
+left = data[current_index - 1] if current_index - 1 >= 0 else float('-inf')
+right = data[current_index + 1] if current_index + 1 < len(data) else float('-inf)
+
+#Move to better neighbor
+if right > current_value:
+   current index += 1
+elif left > current value:
+   current index -= 1
+else:
+# Peak found 
+return current_value, current_index
+
+# Sample dataset
+dataset = [1, 3, 7, 12, 9, 5, 2]
+
+peak_value, peak_index = hill_climbing(dataset)
+
+print("Dataset:", dataset)
+print("Peak Value:", peak_value)
+print("Peak Index:", peak_index)`,
 
 5:`<!DOCTYPE html>
 <html>
