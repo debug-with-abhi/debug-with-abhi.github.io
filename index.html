@@ -79,7 +79,6 @@ pre{
 <button onclick="showCode(4)">4</button>
 <button onclick="showCode(5)">5</button>
 <button onclick="showCode(6)">6</button>
-<button onclick="showCode(7)">7</button>
 <button onclick="showCode(8)">8</button>
 <button onclick="showCode(9)">9</button>
 <button onclick="showCode(10)">10</button>
@@ -196,7 +195,27 @@ alert("Name is required");
 return;
 }`,
 
-6:`Code not added yet.`,
+6:`# Graph represented using adjacency list
+graph = {
+'A': ['B', 'C'],
+'B': ['D', 'E'],
+'C': ['F'],
+'D': [],
+'Έ': [],
+'F': []
+}
+#DFS function
+def dfs(node, visited):
+if node not in visited:
+print(node, end=" ")
+visited.add(node)
+# Visit all adjacent nodes
+for neighbour in graph[node]:
+dfs(neighbour, visited)
+#Driver code
+visited = set()
+print("DFS Traversal:")
+dfs('A', visited)`,
 
 7:`Code not added yet.`,
 
