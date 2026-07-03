@@ -537,7 +537,59 @@ def environment():
 
 environment()`,
 
-12:`Code not added yet.`
+12:`#Basic Rule-Based Chatbot
+
+def chatbot_response(user_input):
+
+  user_input = user_input.lower()
+
+   # Rule base
+
+   if "hello" in user_input or "hi" in user_input:
+
+      return "Hello! How can I help you?"
+
+   elif "how are you" in user_input:
+
+      return "I'm doing great! How about you?"
+
+   elif "your name" in user_input:
+
+      return "I am a simple rule-based chatbot."
+
+   elif "help" in user_input:
+
+      return "Sure! I can answer basic questions. Try asking about me."
+      
+   elif "weather" in user_input:
+
+         return "I cannot check live weather, but it seems like a nice day!"
+
+   elif "bye" in user_input or "exit" in user_input:
+
+        return "Goodbye! Have a great day"
+
+   else:
+
+      return "Sorry, I didn't understand that. Please try again."
+
+# Chat loop
+
+print("Rule-Based Chatbot")
+
+print("Type 'bye' or 'exit' to end the chat.\n")
+
+while True:
+
+   user_input = input("You: ")
+
+   response = chatbot_response(user_input)
+
+   print("Bot:", response)
+
+   if "bye" in user_input.lower() or "exit" in user_input.lower():
+
+    break`
 
 };
 
