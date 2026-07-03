@@ -137,7 +137,54 @@ visited = set()
 print("DFS Traversal:")
 dfs('A', visited)`,
 
-3:`Code not added yet.`,
+3:`def water_jug_bfs(jugl, jug2, target):
+   #State: (jugl_amount, jug2_amount)
+  queue = deque()
+  visited = set()
+#Store path with actions
+queue.append((0, 0, []))
+  while queue:
+    a, b, path = queue.popleft()
+    # Goal condition
+    if a target or b = target:
+       print("Goal Reached!\n")
+       for step in path:
+         print(step)
+       print("Final State:", (a, b))
+       return
+  if (a, b) in visited:
+      continue
+  visited.add((a, b))
+  # Possible actions
+  actions = [
+      ((jug1, b), f"Fill Jug1 → ({jug1}, {b})"),
+      ((a, jug2), f'Fill Jug2 → ({a}, {jug2])"),
+      ((0, b), f'Empty Jug1 → (0, [b])"),
+      ((a, 0), f'Empty Jug2 → ({a}, 0)"),
+      (
+
+      (amin(a, jug2b), b + min(a, jug2 - b)),
+       f'Pour Jug1-Jug2 ({a-min(a, jug2-b)), (b + min(a, jug2 - b)])"
+),
+
+(
+
+   (a + min(b, jugla), bmin(b, jugl-a)),
+f'Pour Jug2-Jug1- ((a + min(b, jug1-a)), (b-min(b, jug1 - a)})"
+
+)
+]
+for (new_a, new_b), action in actions:
+    if (new_a, new_b) not in visited:
+        queue.append((new_a, new_b, path + [action]))
+
+print("No solution found")
+
+# Driver Code
+jug1_capacity = 4
+jug2_capacity = 3
+target = 2
+water_jug_bfs(jug1_capacity, jug2_capacity, target) `,
 
 4:`def hill_climbing(data):
 current index = 0
@@ -165,21 +212,64 @@ print("Dataset:", dataset)
 print("Peak Value:", peak_value)
 print("Peak Index:", peak_index)`,
 
-5:`<!DOCTYPE html>
-<html>
-<head>
-<title>Customer Feedback</title>
-</head>
-<body>
-<h1>Customer Feedback</h1>
-<button onclick="feedback()">Leave Feedback</button>
-<script>
-function feedback() {
-var name = prompt("Enter your Name:");
-if(name = null || name = "") {
-alert("Name is required");
-return;
-}`,
+5:`#A* Search function
+def a_star(grid, start, goal):
+    rows, cols 4,4
+
+     # Manhattan distance heuristic
+      def heuristic(a, b):
+         return abs(a[0] b[0]) + abs(a[1]-b[1])
+
+# Priority queue stores (f_cost, g_cost, node, path)
+open_list = []
+heapq.heappush(open_list, (0, 0, start, [start]))
+
+visited = set()
+
+while open_list:
+
+   f, g, current, path = heapq.heappop(open_list)
+
+   if current goal:
+   return path, g
+
+   if current in visited:
+      continue
+visited.add(current)
+x, y = current
+
+# Possible moves: up, down, left, right 
+for dx, dy in [(-1,0), (1,0), (0,-1), (0,1)]:
+nx, nyx + dx, y + dy
+
+if 0 <=nx < rows and 0 <=ny < cols and grid[nx][ny] = 0:
+   if (nx, ny) not in visited:
+   new_g = g + 1 
+   new_f=new_g + heuristic((nx, ny), goal)
+   heapq.heappush( 
+     open_list, 
+     (new_f, new_g, (nx, ny), path + [(nx, ny)]
+)
+
+return None, None
+# Sample 4x4 grid (0= free cell, 1 = obstacle)
+grid = [
+[0, 0, 0, 0],
+[1, 1, 0, 1],
+[0, 0, 0, 0],
+[0, 1, 1, 0]
+
+]
+start = (0, 0)
+goal = (3, 3)
+path, cost=a_star(grid, start, goal)
+if path:
+
+   print("Shortest Path:")
+   print(path)
+   print("Path Cost:", cost)
+else:
+   print("No path found")`,
 
 6:`# Graph represented using adjacency list
 graph = {
@@ -203,49 +293,33 @@ visited = set()
 print("DFS Traversal:")
 dfs('A', visited)`,
 
-7:`Code not added yet.`,
+8:`#Hill Climbing Optimization to find maximum value in a list
+def hill climbing max(data):
+   n= len(data)
+   #Start from the first index
+   current_index=0
 
-8:`<!DOCTYPE html>
-<html>
-<head>
-<title> MES college of Arts, Commerce and Science </title
-<style>
-img {
-display: block;
-margin-left: auto;
-margin-right: auto;
-}
-</style>
-</head>
-<body bgcolor="pink" text="black">
-<h1> <center> MES ACS COLLEGE </center> </h1>
-<h2> <center> 15th Cross, Malleshwaram,
-Bengaluru 560003.
-</center> </h2>
-<h2> <center> Affiliated to Bengaluru City University
-</center> </h2>
-<h3> <center> NAAC Accredited-Grade-A </center> </h3>
-<h3><center>mesinstitutions.org.in </center></h3>
-<img src="logo.png" style="width:10%;">
-<h1> COURSES OFFERED </h1>
-<ol>
-<h2><b> UG COURSES </b></h2>
-<ol>
-<b> <li> B.Com </li></b>
-<b> <li> B.Com (LSCM) </li></b>
-<b> <li> BBA </li></b>
-<b> <li> BBA (Aviation) </li></b>
-<b> <li> BCA </li></b>.                               
-<b> <li> B.Sc </li> </b>
-<b> <li> BA </li> </b>
-</ol>
-<h2> <b> PG COURSES </b></h2>
-<ol>
-<b> <li> M.Com </li> </b>
-<b> <li> M.Com (FA) </li> </b>
-</ol>
-</body>
-</html`,
+   while True:
+     left current index - 1
+     right current_index + 1
+     best index = current index
+
+     #Check left neighbor
+     if left >= 0 and data[left] > data[best_index]:
+        best_index left
+
+    #Check right neighbor
+    if right < n and data[right] > data[best_index]:
+        best_index right
+
+    #If no better neighbor, stop
+     if best_index current_index:
+        return data[current_index]
+      current_index = best_index
+#Driver code
+numbers [10, 22, 15, 2, 23, 90, 67]
+max_value = hill_climbing_max(numbers)
+print("Maximum value found:", max_value)`,
 
 9:`Code not added yet.`,
 
