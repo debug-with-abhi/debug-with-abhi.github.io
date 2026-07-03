@@ -343,11 +343,199 @@ numbers [10, 22, 15, 2, 23, 90, 67]
 max_value = hill_climbing_max(numbers)
 print("Maximum value found:", max_value)`,
 
-9:`Code not added yet.`,
+9:`#Propositional Logic Expression Evaluator
 
-10:`Code not added yet.`,
+# Logical operation functions
 
-11:`Code not added yet.`,
+def AND(a, b):
+
+return a and b
+
+def OR(a, b):
+
+return a or b
+
+def NOT(a):
+
+return not a
+
+def evaluate(expression, values):
+  """
+ Evaluate a propositional logic expression
+
+expression: string (example: "P AND NOT Q")
+
+values: dictionary with truth values (example: ('P': True, 'Q': False))
+     """
+#Replace variables with truth values
+
+exprexpression
+
+for var in values:
+
+exprexpr.replace(var, str(values[var]))
+
+# Replace logical operators with Python operators
+
+expr = expr.replace("AND", "and")
+
+expr = expr.replace("OR", "or")
+
+exprexpr.replace("NOT", "not")
+
+# Evaluate the expression
+
+return eval(expr)
+
+#Driver code
+
+expression = "P AND NOT Q"
+
+truth values = {
+
+'P': True,
+
+'Q': False
+
+}
+
+result = evaluate(expression, truth_values)
+
+print("Expression:", expression)
+
+print("Truth Values:", truth_values)
+
+print("Result:", result) `,
+
+10:`# Rule-Based Expert System for Weather Classification
+
+def classify_weather(temperature, humidity, rainfall, wind):
+  """
+
+temperature: in °C
+
+humidity: in %
+
+rainfall: in mm
+
+wind: km/h
+"""
+
+# Rule base
+
+if rainfall > 50:
+
+   return "Heavy Rainy"
+
+elif rainfall 10 and humidity > 70:
+
+    return "Rainy"
+
+elif temperature > 30 and humidity < 50:
+
+    return "Hot"
+
+elif temperature < 15 and wind > 20:
+
+    return "Cold and Windy"
+
+elif temperature < 20:
+
+    return "Cold"
+
+elif humidity > 80:
+
+    return "Humid"
+
+else: 
+    return "Pleasant Weather"
+
+#Driver code
+
+print("Weather Expert System")
+
+temperature float(input("Enter temperature (°C): "))
+
+humidity = float(input("Enter humidity (%): "))
+
+rainfall = float(input("Enter rainfall (mm): "))
+
+wind = float(input("Enter wind speed (km/h): "))
+
+weather classify_weather(temperature, humidity, rainfall, wind)
+
+print("\n Weather Classification:", weather)`,
+
+11:`# Basic AI Agent with simple decision-making rules
+
+# Example: Vacuum Cleaner Agent
+
+def vacuum_agent(location, status):
+  """
+
+location: 'A' or 'B'
+
+status: 'Dirty' or 'Clean'
+"""
+
+# Decision rules
+
+if status = "Dirty":
+
+return "Suck"
+
+elif location = "A":
+
+return "Move Right"
+
+else:
+
+  return "Move Left"
+
+#Environment simulation.
+
+def environment():
+
+  rooms = {
+
+    'A': 'Dirty',
+
+     'B': 'Dirty'
+}
+
+   agent_location = 'A'
+
+   print("Initial Environment:", rooms)
+
+   for step in range(4):
+
+     status = rooms[agent_location]
+
+     action = vacuum_agent(agent_location, status)
+
+      print(f"\nAgent in Room {agent_location}")
+
+      print("Perceived Status:", status)
+
+      print("Action Taken:", action)
+
+      if action = "Suck":
+
+         rooms[agent_location] = "Clean"
+
+      elif action = "Move Right":
+
+         agent_location = 'B'
+
+      elif action = "Move Left":
+
+         agent_location = 'A'
+
+    print("\nFinal Environment:", rooms)
+
+# Run the agent
+
+environment()`,
 
 12:`Code not added yet.`
 
