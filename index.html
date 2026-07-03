@@ -97,44 +97,66 @@ pre{
 const projects = {
 
 1:`from collections import deque
+
 def bfs(grid, start, goal):
-rows, cols = len(grid), len(grid[0])
-queue = deque([start]) 
-visited = set([start])
-while queue:
-x, y = queue.popleft()
-if (x, y) = goal:
-return True
-for dx, dy in [(-1,0),(1,0),(0,-1),(0,1)]:
-nx, ny = x+dx, y+dy
-if 0 <= nx < rows and 0 <= ny < cols and grid[nx] [ny] = 0:
-if (nx, ny) not in visited:
-visited.add((nx, ny))
-queue.append((nx, ny))
-return False
+
+   rows, cols = len(grid), len(grid[0])
+   queue = deque([start]) 
+   visited = set([start])
+   while queue:
+    x, y = queue.popleft()
+    if (x, y) = goal:
+        return True
+     for dx, dy in [(-1,0),(1,0),(0,-1),(0,1)]:
+        nx, ny = x+dx, y+dy
+        if 0 <= nx < rows and 0 <= ny < cols and grid[nx] [ny] = 0:
+           if (nx, ny) not in visited:
+               visited.add((nx, ny))
+               queue.append((nx, ny))
+   return False
 grid = [[0,0,1], [0,0,0],[1,0,0]]
 print(bfs(grid, (0,0), (2,2)))`,
 
 2:`# Graph represented using adjacency list
+
 graph = {
+
 'A': ['B', 'C'],
+
 'B': ['D', 'E'],
+
 'C': ['F'],
+
 'D': [],
-'Έ': [],
+
+'Ε': [],
+
 'F': []
+
 }
+
 #DFS function
+
 def dfs(node, visited):
+
 if node not in visited:
+
 print(node, end=" ")
+
 visited.add(node)
-# Visit all adjacent nodes
+
+#Visit all adjacent nodes
+
 for neighbour in graph[node]:
+
 dfs(neighbour, visited)
-#Driver code
+
+# Driver code
+
 visited = set()
+
 print("DFS Traversal:")
+
 dfs('A', visited)`,
 
 3:`def water_jug_bfs(jugl, jug2, target):
