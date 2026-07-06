@@ -3,117 +3,44 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Portfolio</title>
-
+<title>HTML Projects Portfolio</title>
 <style>
-
-body{
-    margin:0;
-    font-family:Arial, Helvetica, sans-serif;
-    background:#f4f4f4;
-}
-
-header{
-    background:#0077cc;
-    color:white;
-    text-align:center;
-    padding:20px;
-}
-
-.container{
-    width:90%;
-    max-width:1000px;
-    margin:30px auto;
-}
-
-.buttons{
-    display:flex;
-    flex-wrap:wrap;
-    gap:15px;
-    justify-content:center;
-    margin-bottom:30px;
-}
-
-button{
-    width:80px;
-    height:80px;
-    font-size:25px;
-    font-weight:bold;
-    border:none;
-    border-radius:10px;
-    background:#0077cc;
-    color:white;
-    cursor:pointer;
-    transition:.3s;
-}
-
-button:hover{
-    background:#005fa3;
-    transform:scale(1.05);
-}
-
-#codeBox{
-    display:none;
-    background:white;
-    border-radius:10px;
-    padding:20px;
-    box-shadow:0 0 10px rgba(0,0,0,.2);
-}
-
-#title{
-    text-align:center;
-    color:#0077cc;
-}
-
-pre{
-    background:#272822;
-    color:#00ff66;
-    padding:20px;
-    overflow:auto;
-    white-space:pre-wrap;
-    word-wrap:break-word;
-    border-radius:8px;
-    font-size:15px;
-}
-
+body{margin:0;font-family:Arial;background:#f4f4f4}
+header{background:#0b74c9;color:#fff;text-align:center;padding:25px}
+.container{width:90%;max-width:1100px;margin:30px auto}
+.buttons{display:flex;gap:15px;justify-content:center;flex-wrap:wrap}
+button{width:80px;height:80px;border:none;border-radius:10px;background:#0b74c9;color:#fff;font-size:28px;font-weight:bold;cursor:pointer}
+button:hover{background:#095fa4}
+#codeBox{display:none;margin-top:25px;background:#fff;border-radius:10px;box-shadow:0 0 10px rgba(0,0,0,.2);padding:20px}
+pre{background:#1e1e1e;color:#d4d4d4;padding:15px;border-radius:8px;overflow:auto;white-space:pre-wrap}
+#copyBtn{float:right;padding:8px 12px}
 </style>
 </head>
-
 <body>
-
 <header>
 <h1>My HTML Projects Portfolio</h1>
-<p>Click any project number to view its source code.</p>
+<p>Click a project number to view its source code.</p>
 </header>
 
 <div class="container">
-
 <div class="buttons">
-
 <button onclick="showCode(3)">3</button>
 <button onclick="showCode(4)">4</button>
 <button onclick="showCode(5)">5</button>
 <button onclick="showCode(8)">8</button>
 <button onclick="showCode(9)">9</button>
-
+<button onclick="showCode(11)">11</button>
 </div>
 
 <div id="codeBox">
-
 <h2 id="title"></h2>
-
+<button id="copyBtn" onclick="copyCode()">Copy Code</button>
 <pre><code id="code"></code></pre>
-
 </div>
-
 </div>
 
 <script>
-
-/* Paste your entire projects object here */
-
 const projects = {
-
 3:`<!DOCTYPE html>
 <html>
 <head>
@@ -172,7 +99,6 @@ const projects = {
 
 </body>
 </html>`,
-
 4:`<html>
 <head>
 </head>
@@ -187,53 +113,6 @@ const projects = {
 
 </body>
 </html>`,
-
-5:`External CSS (style.css)
-
-.red{
-color:red;
-}
-
-.thick{
-font-size:30px;
-}
-
-.blue{
-color:blue;
-}
-
-main.html
-
-<!DOCTYPE html>
-<html>
-<head>
-<title>Multiple Style Sheets</title>
-<style>
-
-body{
-background-color:magenta;
-}
-
-p{
-color:yellow;
-text-align:center;
-}
-
-</style>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<h1 style="color:cyan;text-align:center;">This is Inline CSS</h1>
-<h2>This is Internal Style Sheet</h2>
-<p>Internal CSS Applied</p>
-<h2>External Style Sheet Output</h2>
-<p class="red">This is Red</p>
-<p class="thick">This is Thick</p>
-<p class="blue">This is Blue</p>
-<p class="thick blue">This is Thick and Blue</p>
-</body>
-</html>`,
-
 5:`External CSS (style.css)
 
 .red{
@@ -296,7 +175,6 @@ text-align:center;
 </body>
 
 </html>`,
-
 8:`frame1.html
 
 <!DOCTYPE html>
@@ -345,6 +223,8 @@ frame2.html
 
 </html>
 
+------------------------------------------------
+
 frame3.html
 
 <!DOCTYPE html>
@@ -368,6 +248,9 @@ frame3.html
 </body>
 
 </html>
+
+------------------------------------------------
+
 mainframe.html
 
 <!DOCTYPE html>
@@ -391,7 +274,6 @@ mainframe.html
 </frameset>
 
 </html>`,
-
 9:`<!DOCTYPE html>
 <html>
 <head>
@@ -411,20 +293,21 @@ alert("Thank you "+name+"!");
 }
 </script>
 </body>
-</html>`
+</html>`,
 
+11:`PASTE YOUR PROJECT 11 SOURCE CODE HERE`
 };
 
-function showCode(number){
+function showCode(num){
+ document.getElementById("codeBox").style.display="block";
+ document.getElementById("title").textContent="Project "+num;
+ document.getElementById("code").textContent=projects[num] || "No code added.";
+}
 
-    document.getElementById("codeBox").style.display="block";
-
-    document.getElementById("title").innerHTML="Project " + number;
-
-    document.getElementById("code").textContent=projects[number];
-
+function copyCode(){
+ navigator.clipboard.writeText(document.getElementById("code").textContent);
+ alert("Code copied!");
 }
 </script>
-
 </body>
 </html>
