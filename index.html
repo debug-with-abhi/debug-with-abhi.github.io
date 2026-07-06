@@ -350,7 +350,6 @@ my_cal.total.value=a/b;
 <form name="my_cal">
 
 Number 1:<input type="text" name="first"><br><br>
-
 Number 2:<input type="text" name="second"><br><br>
 <input type="button" value="ADD" onclick="add()">
 <input type="button" value="SUB" onclick="sub()">
@@ -359,19 +358,13 @@ Number 2:<input type="text" name="second"><br><br>
 Result:<input type="text" name="total">
 </form>
 </body>
-</html>`
-
-};
+</html>`};
 
 function showProject(project){
-
 document.getElementById("title").innerHTML="Project " + project;
-
 document.getElementById("display").textContent=projects[project];
 
 }
-
 </script>
-
 </body>
 </html>
