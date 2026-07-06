@@ -252,9 +252,163 @@ text-align:center;
 
 </html>`,
 
-5:`Paste your Project 5 code here`,
+5:`External CSS (style.css)
 
-8:`Paste your Project 8 code here`,
+.red{
+color:red;
+}
+
+.thick{
+font-size:30px;
+}
+
+.blue{
+color:blue;
+}
+
+main.html
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Multiple Style Sheets</title>
+
+<style>
+
+body{
+background-color:magenta;
+}
+
+p{
+color:yellow;
+text-align:center;
+}
+
+</style>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<h1 style="color:cyan;text-align:center;">This is Inline CSS</h1>
+
+<h2>This is Internal Style Sheet</h2>
+
+<p>Internal CSS Applied</p>
+
+<h2>External Style Sheet Output</h2>
+
+<p class="red">This is Red</p>
+
+<p class="thick">This is Thick</p>
+
+<p class="blue">This is Blue</p>
+
+<p class="thick blue">This is Thick and Blue</p>
+
+</body>
+
+</html>`,
+
+8:`frame1.html
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Frame1</title>
+
+</head>
+
+<body>
+
+<div style="background:#C4B0FF;height:600px;text-align:center;">
+
+<h2>This is First Frame</h2>
+
+</div>
+
+</body>
+
+</html>
+
+frame2.html
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Frame2</title>
+
+</head>
+
+<body>
+
+<div style="background:#F2BED1;height:600px;text-align:center;">
+
+<h2>This is Second Frame</h2>
+
+</div>
+
+</body>
+
+</html>
+
+frame3.html
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Frame3</title>
+
+</head>
+
+<body>
+
+<div style="background:#2E5580;height:600px;text-align:center;">
+
+<h2>This is Third Frame</h2>
+
+</div>
+
+</body>
+
+</html>
+mainframe.html
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Frames Example</title>
+
+</head>
+
+<frameset cols="30%,40%,30%">
+
+<frame src="frame1.html">
+
+<frame src="frame2.html">
+
+<frame src="frame3.html">
+
+</frameset>
+
+</html>`,
 
 9:`Paste your Project 9 code here`,
 
