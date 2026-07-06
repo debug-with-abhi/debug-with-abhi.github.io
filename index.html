@@ -206,13 +206,9 @@ color:blue;
 main.html
 
 <!DOCTYPE html>
-
 <html>
-
 <head>
-
 <title>Multiple Style Sheets</title>
-
 <style>
 
 body{
@@ -225,31 +221,18 @@ text-align:center;
 }
 
 </style>
-
 <link rel="stylesheet" href="style.css">
-
 </head>
-
 <body>
-
 <h1 style="color:cyan;text-align:center;">This is Inline CSS</h1>
-
 <h2>This is Internal Style Sheet</h2>
-
 <p>Internal CSS Applied</p>
-
 <h2>External Style Sheet Output</h2>
-
 <p class="red">This is Red</p>
-
 <p class="thick">This is Thick</p>
-
 <p class="blue">This is Blue</p>
-
 <p class="thick blue">This is Thick and Blue</p>
-
 </body>
-
 </html>`,
 
 5:`External CSS (style.css)
@@ -410,10 +393,89 @@ mainframe.html
 
 </html>`,
 
-9:`Paste your Project 9 code here`,
+9:`<!DOCTYPE html>
 
-11:`Paste your Project 11 code here`
+<html>
 
+<head>
+
+<title>Customer Feedback</title>
+
+</head>
+
+<body>
+
+<h1>Customer Feedback</h1>
+
+<button onclick="feedback()">Leave Feedback</button>
+
+<script>
+
+function feedback(){
+
+var name=prompt("Enter your Name:");
+
+if(name==null || name==""){
+
+alert("Name is required");
+
+return;
+
+}
+
+alert("Thank you "+name+"!");
+
+}
+
+</script>
+
+</body>
+
+</html>`,
+
+11:`<!DOCTYPE html>
+<html>
+<head>
+<script>
+function add(){
+var a=Number(my_cal.first.value);
+var b=Number(my_cal.second.value);
+my_cal.total.value=a+b;
+}
+function sub(){
+var a=Number(my_cal.first.value);
+var b=Number(my_cal.second.value);
+my_cal.total.value=a-b;
+}
+function mul(){
+var a=Number(my_cal.first.value);
+var b=Number(my_cal.second.value);
+my_cal.total.value=a*b;
+}
+
+function div(){
+
+var a=Number(my_cal.first.value);
+var b=Number(my_cal.second.value);
+my_cal.total.value=a/b;
+}
+</script>
+</head>
+<body bgcolor="lightblue">
+<form name="my_cal">
+Number 1:<input type="text" name="first"><br><br>
+Number 2:<input type="text" name="second"><br><br>
+
+<input type="button" value="ADD" onclick="add()">
+<input type="button" value="SUB" onclick="sub()">
+<input type="button" value="MUL" onclick="mul()">
+<input type="button" value="DIV" onclick="div()"><br><br>
+
+Result:
+<input type="text" name="total">
+</form>
+</body>
+</html>`
 };
 
 function showCode(number){
@@ -425,8 +487,6 @@ document.getElementById("title").innerHTML="Project " + number;
 document.getElementById("code").textContent=projects[number];
 
 }
-
 </script>
-
 </body>
 </html>
