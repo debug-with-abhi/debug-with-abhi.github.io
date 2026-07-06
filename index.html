@@ -3,96 +3,119 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Projects</title>
+<title>My Portfolio</title>
 
 <style>
+
 body{
-    font-family: Arial, sans-serif;
-    background:#f2f2f2;
     margin:0;
-    padding:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f4f4f4;
+}
+
+header{
+    background:#0077cc;
+    color:white;
+    text-align:center;
+    padding:20px;
 }
 
 .container{
     width:90%;
-    max-width:900px;
-    margin:40px auto;
-    background:white;
-    padding:20px;
-    border-radius:10px;
-    box-shadow:0 0 10px rgba(0,0,0,0.2);
-}
-
-h1{
-    text-align:center;
-    color:#0066cc;
+    max-width:1000px;
+    margin:30px auto;
 }
 
 .buttons{
-    text-align:center;
-    margin:20px 0;
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+    justify-content:center;
+    margin-bottom:30px;
 }
 
 button{
-    width:70px;
-    height:45px;
-    margin:8px;
-    font-size:18px;
+    width:80px;
+    height:80px;
+    font-size:25px;
     font-weight:bold;
-    cursor:pointer;
     border:none;
-    border-radius:6px;
-    background:#007BFF;
+    border-radius:10px;
+    background:#0077cc;
     color:white;
+    cursor:pointer;
+    transition:.3s;
 }
 
 button:hover{
-    background:#0056b3;
+    background:#005fa3;
+    transform:scale(1.05);
 }
 
-#content{
-    margin-top:20px;
-    border:2px solid #007BFF;
+#codeBox{
+    display:none;
+    background:white;
+    border-radius:10px;
     padding:20px;
-    min-height:250px;
-    background:#fafafa;
-    border-radius:8px;
+    box-shadow:0 0 10px rgba(0,0,0,.2);
+}
+
+#title{
+    text-align:center;
+    color:#0077cc;
 }
 
 pre{
+    background:#272822;
+    color:#00ff66;
+    padding:20px;
+    overflow:auto;
     white-space:pre-wrap;
+    word-wrap:break-word;
+    border-radius:8px;
     font-size:15px;
 }
-</style>
 
+</style>
 </head>
+
 <body>
+
+<header>
+<h1>My HTML Projects Portfolio</h1>
+<p>Click any project number to view its source code.</p>
+</header>
 
 <div class="container">
 
-<h1>Projects</h1>
-
 <div class="buttons">
-<button onclick="showProject(3)">3</button>
-<button onclick="showProject(4)">4</button>
-<button onclick="showProject(5)">5</button>
-<button onclick="showProject(8)">8</button>
-<button onclick="showProject(9)">9</button>
-<button onclick="showProject(11)">11</button>
+
+<button onclick="showCode(3)">3</button>
+<button onclick="showCode(4)">4</button>
+<button onclick="showCode(5)">5</button>
+<button onclick="showCode(8)">8</button>
+<button onclick="showCode(9)">9</button>
+<button onclick="showCode(11)">11</button>
+
 </div>
 
-<div id="content">
-<h2>Welcome</h2>
-<p>Click any project button to view its program.</p>
+<div id="codeBox">
+
+<h2 id="title"></h2>
+
+<pre><code id="code"></code></pre>
+
 </div>
 
 </div>
 
 <script>
 
+/* Paste your entire projects object here */
+
 const projects = {
 
-3: `<!DOCTYPE html>
+3:`<!DOCTYPE html>
 <html>
 <head>
 <title>Registration Form</title>
@@ -151,64 +174,25 @@ const projects = {
 </body>
 </html>`,
 
-4: `
-Project 4
+4:`Paste your Project 4 code here`,
 
-Write anything here.
+5:`Paste your Project 5 code here`,
 
-Example:
+8:`Paste your Project 8 code here`,
 
-#include <stdio.h>
+9:`Paste your Project 9 code here`,
 
-int main()
-{
-    printf("Hello World");
-    return 0;
-}
-`,
-
-5: `
-Project 5
-
-Write your project or notes here.
-
-Example:
-
-SELECT * FROM Employees;
-`,
-
-8: `
-Project 8
-
-Write anything you want here.
-
-Example:
-
-HTML
-CSS
-JavaScript
-`,
-
-9: `
-Project 9
-
-Replace this text with your own project.
-`,
-
-11: `
-Project 11
-
-Replace this text with your own project.
-`
+11:`Paste your Project 11 code here`
 
 };
 
-function showProject(number){
+function showCode(number){
 
-document.getElementById("content").innerHTML =
-"<h2>Project " + number + "</h2><pre>" +
-projects[number] +
-"</pre>";
+document.getElementById("codeBox").style.display="block";
+
+document.getElementById("title").innerHTML="Project " + number;
+
+document.getElementById("code").textContent=projects[number];
 
 }
 
