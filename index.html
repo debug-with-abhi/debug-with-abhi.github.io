@@ -145,10 +145,13 @@ const projects = {
 </html>`,
 
 4:`<html>
+<head>
+</head>
+
 <body>
 
-<marquee>
-<img src="nature.jpg" width="120" height="80">
+<marquee behavior="scroll" direction="left">
+<img src="../Images/Nature.jpg" width="120" height="80">
 </marquee>
 
 <a href="https://www.google.com">GOOGLE</a>
@@ -319,8 +322,43 @@ mainframe.html
 
 </html>`,
 
-9:`
-`,
+9:`<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Customer Feedback</title>
+
+</head>
+
+<body>
+
+<h1>Customer Feedback</h1>
+
+<button onclick="feedback()">Leave Feedback</button>
+
+<script>
+
+function feedback(){
+
+var name=prompt("Enter your Name:");
+
+if(name==null || name==""){
+
+alert("Name is required");
+
+return;
+
+}
+
+alert("Thank you "+name+"!");
+
+}
+</body>
+<script>\\\
+</body>
+</html>`,
 
 11:`
 `
