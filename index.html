@@ -1,29 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects</title>
+
+<style>
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    margin:0;
+    background:#f4f4f4;
+}
+
+header{
+    background:#0077cc;
+    color:white;
+    text-align:center;
+    padding:20px;
+    font-size:35px;
+    font-weight:bold;
+}
+
+.container{
+    display:flex;
+    width:90%;
+    margin:30px auto;
+    gap:20px;
+}
+
+.left{
+    width:20%;
+    background:white;
+    border-radius:10px;
+    padding:20px;
+    box-shadow:0 0 10px rgba(0,0,0,.2);
+}
+
+.left h2{
+    text-align:center;
+}
+
+.left button{
+    width:100%;
+    padding:15px;
+    margin:10px 0;
+    font-size:18px;
+    border:none;
+    background:#0077cc;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.left button:hover{
+    background:#0056b3;
+}
+
+.right{
+    width:80%;
+    background:#1e1e1e;
+    color:#00ff88;
+    border-radius:10px;
+    padding:20px;
+    box-shadow:0 0 10px rgba(0,0,0,.2);
+}
+
+.right h2{
+    color:white;
+}
+
+pre{
+    white-space:pre-wrap;
+    font-size:16px;
+}
+
+</style>
+
+</head>
+<body>
+
+<header>Projects</header>
+
+<div class="container">
+
+<div class="left">
+
+<h2>Projects</h2>
+
+<button onclick="showProject(3)">3</button>
+
+<button onclick="showProject(4)">4</button>
+
+<button onclick="showProject(5)">5</button>
+
+<button onclick="showProject(8)">8</button>
+
+<button onclick="showProject(9)">9</button>
+
+<button onclick="showProject(11)">11</button>
+
+</div>
+
+<div class="right">
+
+<h2 id="title">Select a Project</h2>
+
+<pre id="display">
+Click any project button to view its code.
+</pre>
+
+</div>
+
+</div>
+
 <script>
-const projects = {};
 
-projects[3] = String.raw`PASTE YOUR PROJECT 3 CODE HERE`;
+const projects = {
 
-projects[4] = String.raw`PASTE YOUR PROJECT 4 CODE HERE`;
+3:`<!DOCTYPE html>
+<html>
+<head>
+<title>Registration Form</title>
+</head>
+<body bgcolor="yellow">
+<h2>Creating a Registration Form</h2>
 
-projects[5] = String.raw`PASTE YOUR PROJECT 5 CODE HERE`;
+<form>
 
-projects[8] = String.raw`PASTE YOUR PROJECT 8 CODE HERE`;
+<label>Firstname:</label>
+<input type="text" name="firstname" size="15"><br><br>
 
-projects[9] = String.raw`PASTE YOUR PROJECT 9 CODE HERE`;
+<label>Lastname:</label>
+<input type="text" name="lastname" size="15"><br><br>
 
-projects[11] = String.raw`PASTE YOUR PROJECT 11 CODE HERE`;
+<label>Course:</label>
 
-function showCode(number) {
+<select>
+<option>Course</option>
+<option>BCA</option>
+<option>BBA</option>
+<option>B.Com</option>
+<option>B.Sc</option>
+<option>B.A</option>
+</select>
 
-    document.getElementById("codeBox").style.display = "block";
+<br><br>
 
-    document.getElementById("title").innerHTML = "Project " + number;
+<label>Gender:</label><br>
 
-    if(projects[number]){
-        document.getElementById("code").textContent = projects[number];
-    }else{
-        document.getElementById("code").textContent = "Project not found.";
-    }
+<input type="radio" name="gender"> Male<br>
+<input type="radio" name="gender"> Female
 
+<br><br>
+
+<label>Hobbies:</label><br>
+
+<input type="checkbox"> Programming<br>
+<input type="checkbox"> Sports<br>
+<input type="checkbox"> Singing<br>
+<input type="checkbox"> Reading
+
+<br><br>
+
+<label>Address:</label><br>
+
+<textarea cols="60" rows="5"></textarea>
+
+<br><br>
+
+<input type="submit" value="Submit">
+<input type="reset" value="Reset">
+
+</form>
+
+</body>
+</html>`,
+
+4:`<html>
+<head>
+</head>
+
+<body>
+
+<marquee behavior="scroll" direction="left">
+<img src="../Images/Nature.jpg" width="120" height="80">
+</marquee>
+
+<a href="https://www.google.com">GOOGLE</a>
+
+</body>
+</html>`,
+
+5:`External CSS (style.css)
+
+.red{
+color:red;
+}
+
+.thick{
+font-size:30px;
+}
+
+.blue{
+color:blue;
+}
+
+main.html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Multiple Style Sheets</title>
+<style>
+
+body{
+background-color:magenta;
+}
+
+p{
+color:yellow;
+text-align:center;
+}
+
+</style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1 style="color:cyan;text-align:center;">This is Inline CSS</h1>
+<h2>This is Internal Style Sheet</h2>
+<p>Internal CSS Applied</p>
+<h2>External Style Sheet Output</h2>
+
+<p class="red">This is Red</p>
+<p class="thick">This is Thick</p>
+<p class="blue">This is Blue</p>
+<p class="thick blue">This is Thick and Blue</p>
+</body>
+</html>`,
+
+8:`frame1.html
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Frame1</title>
+</head>
+<body>
+<div style="background:#C4B0FF;height:600px;text-align:center;">
+<h2>This is First Frame</h2>
+</div>
+</body>
+</html>
+frame2.html
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Frame2</title>
+</head>
+<body>
+<div style="background:#F2BED1;height:600px;text-align:center;">
+<h2>This is Second Frame</h2>
+</div>
+</body>
+</html>
+
+frame3.html
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Frame3</title>
+</head>
+<body>
+
+<div style="background:#2E5580;height:600px;text-align:center;">
+
+<h2>This is Third Frame</h2>
+</div>
+</body>
+</html>
+mainframe.html
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Frames Example</title>
+</head>
+<frameset cols="30%,40%,30%">
+<frame src="frame1.html">
+<frame src="frame2.html">
+<frame src="frame3.html">
+</frameset>
+</html>`,
+
+9:`<!DOCTYPE html>
+<html>
+<head>
+<title>Customer Feedback</title>
+</head>
+<body>
+<h1>Customer Feedback</h1>
+<button onclick="feedback()">Leave Feedback</button>
+<script>
+function feedback(){
+var name=prompt("Enter your Name:");
+if(name==null || name==""){
+alert("Name is required");
+return;
+}
+alert("Thank you "+name+"!");
 }
 </script>
+</body>
+</html>`,
+
+11:`<!DOCTYPE html>
+
+<html>
+<head>
+<script>
+
+function add(){
+  var a=Number(my_cal.first.value);
+  var b=Number(my_cal.second.value);
+  my_cal.total.value=a+b;
+}
+function sub(){
+  var a=Number(my_cal.first.value);
+  var b=Number(my_cal.second.value);
+  my_cal.total.value=a-b;
+
+}
+
+function mul(){
+var a=Number(my_cal.first.value);
+var b=Number(my_cal.second.value);
+my_cal.total.value=a*b;
+}
+function div(){
+var a=Number(my_cal.first.value);
+var b=Number(my_cal.second.value);
+my_cal.total.value=a/b;
+}
+</script>
+</head>
+<body bgcolor="lightblue">
+<form name="my_cal">
+
+Number 1:<input type="text" name="first"><br><br>
+
+Number 2:<input type="text" name="second"><br><br>
+<input type="button" value="ADD" onclick="add()">
+<input type="button" value="SUB" onclick="sub()">
+<input type="button" value="MUL" onclick="mul()">
+<input type="button" value="DIV" onclick="div()"><br><br>
+Result:<input type="text" name="total">
+</form>
+</body>
+</html>`
+
+};
+
+function showProject(project){
+
+document.getElementById("title").innerHTML="Project " + project;
+
+document.getElementById("display").textContent=projects[project];
+
+}
+
+</script>
+
+</body>
+</html>
