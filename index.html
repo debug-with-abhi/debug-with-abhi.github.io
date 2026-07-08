@@ -74,16 +74,16 @@ pre{
 <div class="container">
 
 <div class="sidebar">
-<button onclick="showCode(3)">Project 1</button>
-<button onclick="showCode(3)">Project 2</button>
+<button onclick="showCode(1)">Project 1</button>
+<button onclick="showCode(2)">Project 2</button>
 <button onclick="showCode(3)">Project 3</button>
 <button onclick="showCode(4)">Project 4</button>
 <button onclick="showCode(5)">Project 5</button>
-<button onclick="showCode(8)">Project 6</button>
-<button onclick="showCode(9)">Project 7</button>
-<button onclick="showCode(11)">Project 8</button>
-<button onclick="showCode(3)">Project 9</button>
-<button onclick="showCode(3)">Project 13</button>
+<button onclick="showCode(6)">Project 6</button>
+<button onclick="showCode(7)">Project 7</button>
+<button onclick="showCode(8)">Project 8</button>
+<button onclick="showCode(9)">Project 9</button>
+<button onclick="showCode(13)">Project 13</button>
 </div>
 
 <div class="main">
@@ -417,9 +417,9 @@ int main()
     printf("DFS Traversal: ");
     DFS(start);
     return 0;
-}`
+};
 
 function showCode(projectNumber) {
-    document.getElementById("codeBox").textContent =
+    document.getElementById("code").textContent =
         projects[projectNumber] || "Code not available.";
 }
