@@ -1,410 +1,499 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Portfolio Projects</title>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Abhishek P | Portfolio</title>
+
 <style>
-body{margin:0;font-family:Arial;background:#f4f4f4}
-header{background:#222;color:#fff;padding:20px;text-align:center}
-.container{display:flex;min-height:100vh}
-.sidebar{width:220px;background:#333;padding:15px}
-.sidebar button{width:100%;margin:8px 0;padding:10px;background:#555;color:#fff;border:0;cursor:pointer}
-.sidebar button:hover{background:#777}
-.main{flex:1;padding:20px}
-pre{background:#111;color:#0f0;padding:15px;height:70vh;overflow:auto;white-space:pre-wrap}
-</style></head>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    scroll-behavior:smooth;
+}
+
+
+/* Navigation */
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:#020617;
+    padding:15px;
+    text-align:center;
+    z-index:1000;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:20px;
+    font-size:18px;
+}
+
+nav a:hover{
+    color:#38bdf8;
+}
+
+
+/* Hero Section */
+
+.hero{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:linear-gradient(120deg,#020617,#1e3a8a,#0f172a);
+}
+
+
+.hero h1{
+    font-size:55px;
+    animation:glow 2s infinite alternate;
+}
+
+
+.hero p{
+    font-size:22px;
+    margin:15px;
+}
+
+
+@keyframes glow{
+
+from{
+text-shadow:0 0 10px cyan;
+}
+
+to{
+text-shadow:0 0 30px blue;
+}
+
+}
+
+
+.btn{
+
+display:inline-block;
+padding:12px 25px;
+margin:10px;
+background:#38bdf8;
+color:black;
+border-radius:30px;
+text-decoration:none;
+font-weight:bold;
+
+}
+
+
+.btn:hover{
+
+background:white;
+
+}
+
+
+
+/* Sections */
+
+
+section{
+
+padding:80px 10%;
+
+}
+
+
+.title{
+
+text-align:center;
+font-size:35px;
+margin-bottom:40px;
+
+}
+
+
+
+/* Cards */
+
+.card-container{
+
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:25px;
+
+}
+
+
+.card{
+
+background:#1e293b;
+padding:25px;
+width:300px;
+border-radius:15px;
+box-shadow:0 0 20px #000;
+
+transition:.4s;
+
+}
+
+
+.card:hover{
+
+transform:translateY(-10px);
+box-shadow:0 0 30px cyan;
+
+}
+
+
+
+/* Skills */
+
+
+.skill{
+
+margin:20px;
+
+}
+
+
+.bar{
+
+height:10px;
+background:#334155;
+border-radius:10px;
+
+}
+
+
+.progress{
+
+height:10px;
+background:#38bdf8;
+border-radius:10px;
+
+}
+
+
+
+/* Footer */
+
+footer{
+
+background:#020617;
+padding:20px;
+text-align:center;
+
+}
+
+
+</style>
+
+</head>
+
+
 <body>
-<header><h1>My Web Development Portfolio</h1></header>
-<div class="container">
-<div class="sidebar">
-<button onclick="showCode(1)">Project 1(5,4)</button>
-<button onclick="showCode(2)">Project 2(3,6)</button>
-<button onclick="showCode(3)">Project 3(5)</button>
-<button onclick="showCode(4)">Project 4(5)</button>
-<button onclick="showCode(5)">Project 5(6)</button>
-<button onclick="showCode(6)">Project 6(5)</button>
-<button onclick="showCode(7)">Project 7(11,22)</button>
-<button onclick="showCode(8)">Project 8(5)</button>
-<button onclick="showCode(9)">Project 9(4)</button>
-<button onclick="showCode(13)">Project 13(4)</button>
+
+
+<nav>
+
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+
+</nav>
+
+<!-- HOME -->
+
+<div class="hero" id="home">
+
+<div>
+
+<h1>Abhishek P</h1>
+
+<p>BCA Student | Web Developer | Tech Enthusiast</p>
+
+<p>
+Building creative websites and learning new technologies.
+</p>
+
+
+<a class="btn" href="#projects">
+View Projects
+</a>
+
+
+<a class="btn" href="#">
+Download Resume
+</a>
+
 </div>
-<div class="main">
-<h2 id="title">Select a Project</h2>
-<pre id="codeBox">Click a project button to view its code.</pre>
-</div></div>
-<script>
-const projects={
-1: `#include <stdio.h>
-int main() {
-    int a[50], n, key, i;
-    printf("Enter number of elements: ");
-    scanf("%d", &n);
-    printf("Enter elements:\n");
-    for(i = 0; i < n; i++)
-    {
-       }
-     scanf("%d", &a[i]);
-     printf("Enter element to search: ");
-     scanf("%d", &key);
-     for(i = 0; i < n; i++) {
-      if(a[i] = key) {
-      printf("Element found at position %d", i+1);
-       return 0;
-       }
-       }
-       printf("Element not found");
-       return 0;
 
-}`,
+</div>
 
-2: `#include <stdio.h>
-int main() {
-    int a[50], n, key, low, high, mid, i;
-     printf("Enter number of elements: ");
-scanf("%d", &n); 
-printf("Enter sorted elements:\n");
-for(i=0; i < n; i++) 
-{
-   scanf("%d", &a[i]);
-}
-printf("Enter element to search: ");
-scanf("%d", &key);
-low = 0;
-high = n - 1;
-while(low <= high) {
-   mid = (low + high)/2;
+<!-- ABOUT -->
 
-  if(a[mid]key) {
-      printf("Element found at position %d", mid+1);
-      return 0;
-} 
+<section id="about">
 
-else if(a[mid] <key)
-   low = mid + 1; 
-else
-   high = mid - 1;
+<h2 class="title">
+About Me
+</h2>
 
-} 
-printf("Element not found");
-return 0;
-}`,
 
-3: `#include <stdio.h>
-int main() {
-int a[100], n, i, j, min, temp;
-printf("Enter number of elements: ");
-scanf("%d", &n);
-printf("Enter elements:\n");
-for(i = 0; i < n; i++)
-  {
-   scanf("%d", &a[i]);
-  }
-for(i = 0; i < n - 1; i++) {
-   min = i;
-   for(j=i+1; j<n; j++) {
-     if(a[j] < a[min])
-        min = j;
-    }
-    temp = a[i];
-    a[i] = a[min];
-    a[min] = temp;
-    }
-    printf("Sorted array:\n");
-    for(i = 0; i < n; i++)
-    {
-    printf("%d ", a[i]); 
-    }
-    return 0;
-    }`,
+<div class="card-container">
+
+
+<div class="card">
+
+<h2>Profile</h2>
+
+<p>
+I am Abhishek P, a Bachelor of Computer Applications (BCA)
+student passionate about web development, programming and
+technology.
+</p>
+
+<br>
+
+<p>
+I enjoy creating websites, learning databases,
+cloud technologies and improving my technical skills.
+</p>
+
+</div>
 
 
 
-4: `#include <stdio.h>
-int main()
-{
-  int a[100], n, i, j, temp;
-  printf("Enter number of elements: ");
-  scanf("%d", &n); printf("Enter elements:\n");
-  for(i=0; i<n; i++) 
-     {
-     scanf("%d", &a[i]);
-     }
-  for(i = 0; i < n - 1; i++) 
-  {
-    for(j=0; j < n- i - 1; j++) 
-    { 
-      if(a[j] > a[j + 1])
-      {
-         temp = a[j];
-         a[j] = a[j + 1];
-         a[j + 1] = temp;
-         }
-    }
-}
-printf("Sorted array:\n");
-for(i = 0; i < n; i++)
-   {
-   printf("%d ", a[i]);
-   }
-return 0;
-}`,
+<div class="card">
+
+<h2>Education</h2>
+
+<p>
+<b>Degree:</b> Bachelor of Computer Applications (BCA)
+</p>
+
+<br>
+
+<p>
+Interested Areas:
+Web Development, Database Management,
+Cloud Computing and Software Development.
+</p>
+
+
+</div>
 
 
 
-5: `#include <stdio.h>
-int main()
-{
-    int a[100], n, i, j, key;
-    printf("Enter number of elements: ");
-    scanf("%d", &n);
-    printf("Enter elements:\n");
-    for(i = 0; i < n; i++)
-    {
-        scanf("%d", &a[i]);
-    }
-    for(i = 1; i < n; i++)
-    {
-        key = a[i];
-        j = i - 1;
+<div class="card">
 
-        while(j >= 0 && a[j] > key)
-        {
-            a[j + 1] = a[j];
-            j--;
-        }
-        a[j + 1] = key;
-    }
-    printf("Sorted array:\n");
-    for(i = 0; i < n; i++)
-    {
-        printf("%d ", a[i]);
-    }
-    return 0;
-}`,
+<h2>Internship</h2>
 
+<p>
 
+<b>Research Analyst Intern</b><br>
 
-6: `#include <stdio.h>
-void merge(int a[], int l, int m, int r)
-{
-    int i, j, k;
-    int n1 = m - l + 1;
-    int n2 = r - m;
+Concentrix (Fortune 500 Company)
 
-    int L[n1], R[n2];
+</p>
 
-    for(i = 0; i < n1; i++)
-        L[i] = a[l + i];
+<br>
 
+<p>
 
-    for(j = 0; j < n2; j++)
-        R[j] = a[m + 1 + j];
+Worked on a global technology client project
+supporting NFL Sunday Games & YouTube TV.
 
+Conducted research, analyzed insights and
+provided data-driven recommendations.
 
-    i = 0;
-    j = 0;
-    k = l;
+</p>
 
-    while(i < n1 && j < n2)
-    {
-        if(L[i] <= R[j])
-            a[k++] = L[i++];
-        else
-            a[k++] = R[j++];
-    }
+</div>
 
-    while(i < n1)
-        a[k++] = L[i++];
+</div>
+</section>
 
-    while(j < n2)
-        a[k++] = R[j++];
-}
+<!-- SKILLS -->
 
-void mergeSort(int a[], int l, int r)
-{
-    if(l < r)
-    {
-        int m = (l + r) / 2;
-        mergeSort(a, l, m);
-        mergeSort(a, m + 1, r);
-        merge(a, l, m, r);
-    }
-}
+<section id="skills">
 
-int main()
-{
-    int a[100], n, i;
-    printf("Enter number of elements: ");
-    scanf("%d", &n);
-    printf("Enter elements:\n");
-    for(i = 0; i < n; i++)
-    {
-        scanf("%d", &a[i]);
-    }
+<h2 class="title">
+My Skills
+</h2>
 
-    mergeSort(a, 0, n - 1);
+<div class="skill">
 
-    printf("Sorted array:\n");
-    for(i = 0; i < n; i++)
-    {
-        printf("%d ", a[i]);
-    }
+HTML
 
-    return 0;
-}`,
+<div class="bar">
+<div class="progress" style="width:90%">
+</div>
+</div>
+
+</div>
+
+<div class="skill">
+
+CSS
+
+<div class="bar">
+<div class="progress" style="width:85%">
+</div>
+</div>
+
+</div>
+
+<div class="skill">
+
+JavaScript
+
+<div class="bar">
+<div class="progress" style="width:70%">
+</div>
+</div>
+
+</div>
 
 
+<div class="skill">
 
-7: `#include <stdio.h>
-int main() {
-    int a[10][10], b[10][10], c[10][10];
-    int r1, c1, r2, c2;
-    int i, j, k;
+MySQL
 
-    printf("Enter rows and columns of first matrix: ");
-    scanf("%d %d", &r1, &c1);
+<div class="bar">
+<div class="progress" style="width:75%">
+</div>
+</div>
 
-    printf("Enter rows and columns of second matrix: ");
-    scanf("%d %d", &r2, &c2);
+</div>
 
-    if (c1 != r2) {
-        printf("Matrix multiplication is not possible.\n");
-        return 0;
-    }
+<div class="skill">
 
-    printf("Enter elements of first matrix:\n");
-    for (i = 0; i < r1; i++)
-        for (j = 0; j < c1; j++)
-            scanf("%d", &a[i][j]);
+Python
 
-    printf("Enter elements of second matrix:\n");
-    for (i = 0; i < r2; i++)
-        for (j = 0; j < c2; j++)
-            scanf("%d", &b[i][j]);
+<div class="bar">
+<div class="progress" style="width:65%">
+</div>
+</div>
 
-    for (i = 0; i < r1; i++) {
-        for (j = 0; j < c2; j++) {
-            c[i][j] = 0;
-            for (k = 0; k < c1; k++) {
-                c[i][j] += a[i][k] * b[k][j];
-            }
-        }
-    }
+</div>
 
-    printf("Resultant Matrix:\n");
-    for (i = 0; i < r1; i++) {
-        for (j = 0; j < c2; j++) {
-            printf("%d ", c[i][j]);
-        }
-        printf("\n");
-    }
+</section>
 
-    return 0;
-}`,
+<!-- PROJECTS -->
 
 
-
-8: `#include <stdio.h>
-int factorial(int n)
-{
-    if(n == 0 || n == 1)
-        return 1;
-    else
-        return n * factorial(n - 1);
-}
-int main()
-{
-    int n;
-    printf("Enter a number: ");
-    scanf("%d", &n);
-    printf("Factorial of %d = %d", n, factorial(n));
-    return 0;
-}`,
+<section id="projects">
 
 
-
-9: `#include <stdio.h>
-#define INF 999
-int main()
-{
-    int n, cost[10][10], visited[10];
-    int i, j, min, u = 0, v = 0, total = 0;
-    printf("Enter number of vertices: ");
-    scanf("%d", &n);
-    printf("Enter cost adjacency matrix:\n");
-    for(i = 1; i <= n; i++)
-        for(j = 1; j <= n; j++)
-           scanf("%d", &cost[i][j]);
-    for(i = 1; i <= n; i++)
-       visited[i] = 0;
-       visited[1] = 1;
-       printf("Edges in Minimum Spanning Tree:\n");
-       for(int count = 1; count < n; count++)
-       {
-        min = INF;
-        for(i = 1; i <= n; i++)
-        {
-           if(visited[i])
-            {
-                for(j = 1; j <= n; j++)
-                {
-                    if(!visited[j] && cost[i][j] < min)
-                    {
-                        min = cost[i][j];
-                        u = i;
-                        v = j;
-                    }
-                }
-            }
-        }
-        visited[v] = 1;
-        total = total + min;
-        printf("%d - %d cost = %d\n", u, v, min);
-    }
-    printf("Minimum cost = %d\n", total);
-    return 0;
-}`,
+<h2 class="title">
+My Projects
+</h2>
 
 
+<div class="card-container">
 
-13: `#include <stdio.h>
-int graph[50][50], visited[50], n;
 
-/* DFS Function */
-void DFS(int v)
-{
-    int i;
-    visited[v] = 1;
-    printf("%d ", v);
-    for(i = 0; i < n; i++)
-    {
-        if(graph[v][i] == 1 && visited[i] == 0)
-        {
-            DFS(i);
-        }
-    }
-}
+<div class="card">
 
-int main()
-{
-    int i, j, start;
-    printf("Enter number of vertices: ");
-    scanf("%d", &n);
-    printf("Enter adjacency matrix:\n");
-    for(i = 0; i < n; i++)
-        for(j = 0; j < n; j++)
-            scanf("%d", &graph[i][j]);
-    for(i = 0; i < n; i++)
-        visited[i] = 0;
-    printf("Enter starting vertex: ");
-    scanf("%d", &start);
-    printf("DFS Traversal: ");
-    DFS(start);
-    return 0;
-};`
+<h2>Portfolio Website</h2>
 
-};
-function showCode(n){
-document.getElementById('title').textContent='Project '+n;
-document.getElementById('codeBox').textContent=projects[n]||'Code not available.';
-}
-</script>
-</body></html>
+<p>
+Personal portfolio created using HTML,
+CSS and JavaScript.
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Calculator</h2>
+
+<p>
+A functional calculator application
+using JavaScript.
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Employee Database</h2>
+
+<p>
+Database project using MySQL with
+CRUD operations.
+</p>
+
+</div>
+<div class="card">
+
+<h2>Registration Form</h2>
+
+<p>
+Responsive registration form using HTML
+and CSS.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+
+<h2 class="title">
+Contact
+</h2>
+
+
+<div class="card-container">
+
+
+<div class="card">
+
+<h2>Let's Connect</h2>
+
+<p>
+Email:
+your-email@gmail.com
+</p>
+
+<br>
+
+<p>
+GitHub:
+github.com/debug-with-abhi
+</p>
+<br>
+
+<p>
+LinkedIn:
+Your LinkedIn Profile
+</p>
+</div>
+</div>
+</section>
+<footer>
+
+© 2026 Abhishek P | BCA Portfolio Project
+
+</footer></bod
+</html>
