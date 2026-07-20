@@ -1,34 +1,147 @@
+from flask import Flask, request, render_template_string
+
+app = Flask(__name__)
+
+HTML = """
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Smart Queue Management</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Smart Queue Predictor</title>
+
+    <style>
+        body{
+            margin:0;
+            font-family:Arial, sans-serif;
+            background:linear-gradient(135deg,#0f172a,#1e293b);
+            color:white;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            min-height:100vh;
+        }
+
+        .container{
+            background:rgba(255,255,255,0.08);
+            padding:40px;
+            border-radius:20px;
+            width:420px;
+            backdrop-filter:blur(10px);
+            box-shadow:0 0 20px rgba(0,0,0,0.4);
+        }
+
+        h1{
+            text-align:center;
+            margin-bottom:10px;
+        }
+
+        p{
+            text-align:center;
+            color:#cbd5e1;
+        }
+
+        label{
+            display:block;
+            margin-top:20px;
+            margin-bottom:8px;
+            font-weight:bold;
+        }
+
+        input{
+            width:100%;
+            padding:12px;
+            border:none;
+            border-radius:10px;
+            font-size:16px;
+            box-sizing:border-box;
+        }
+
+        button{
+            width:100%;
+            padding:14px;
+            margin-top:25px;
+            border:none;
+            border-radius:10px;
+            background:#2563eb;
+            color:white;
+            font-size:16px;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:#1d4ed8;
+        }
+
+        .result{
+            margin-top:25px;
+            padding:20px;
+            background:#0ea5e9;
+            border-radius:12px;
+        }
+    </style>
 </head>
 
 <body>
 
-<nav>
-    <h2>Smart Queue</h2>
+<div class="container">
 
-    <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/login">Login</a></li>
-        <li><a href="/dashboard">Dashboard</a></li>
-        <li><a href="/predict">Predict</a></li>
-    </ul>
-</nav>
+    <h1>🤖 Smart Queue Management System</h1>
+    <p>AI-Based Waiting Time Prediction</p>
 
-<div class="hero">
+    <form method="POST">
 
-<h1>AI Smart Queue Management System</h1>
+        <label>Number of People Ahead</label>
+        <input type="number" name="people" required>
 
-<p>
-Predict waiting time using Machine Learning.
-</p>
+        <label>Average Service Time (minutes)</label>
+        <input type="number" step="0.1" name="service_time" required>
 
-<button>Get Started</button>
+        <button type="submit">Predict Waiting Time</button>
+
+    </form>
+
+    {% if prediction is not none %}
+
+    <div class="result">
+
+        <h2>Prediction Result</h2>
+
+        <p><strong>People Ahead:</strong> {{ people }}</p>
+
+        <p><strong>Service Time:</strong> {{ service_time }} minutes</p>
+
+        <p><strong>Estimated Waiting Time:</strong> {{ prediction }} minutes</p>
+
+    </div>
+
+    {% endif %}
 
 </div>
 
 </body>
 </html>
+"""
+
+@app.route("/", methods=["GET", "POST"])
+def home():
+
+    prediction = None
+    people = None
+    service_time = None
+
+    if request.method == "POST":
+
+        people = int(request.form["people"])
+        service_time = float(request.form["service_time"])
+
+        # Waiting time calculation
+        prediction = people * service_time
+
+    return render_template_string(
+        HTML,
+        prediction=prediction,
+        people=people,
+        service_time=service_time
+    )
+
+if __name__ == "__main__":
+    app.run(debug=True)
